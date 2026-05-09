@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Resources/Scenes/Title.unity
+    guid: a0ab69b363c93004b960ad53200fdb43
+  - enabled: 1
+    path: Assets/Resources/Scenes/Login.unity
+    guid: d8cf95d68c8f37d4ba315a7d2c234fbc
+  - enabled: 1
+    path: Assets/Resources/Scenes/Lobby.unity
+    guid: fdb73bf166fdf02449620d3f69e1f7fe
+  - enabled: 1
+    path: Assets/Resources/Scenes/Battle_Goblin.unity
+    guid: a62995b3c8d41824e9dec31c2fec04ed
+  - enabled: 1
+    path: Assets/Resources/Scenes/Battle_Boss_Goblin.unity
+    guid: 30a4808b1084ade43ae937787175f274
+  - enabled: 1
+    path: Assets/Resources/Scenes/Battle_Skeleton.unity
+    guid: fc135b947f091784c97caa8895afa97f
+  - enabled: 1
+    path: Assets/Resources/Scenes/Battle_Boss_Skeleton.unity
+    guid: 8d3213d2333fcfd489ec7cf7543b5711
+  - enabled: 1
+    path: Assets/Resources/Scenes/Battle_Trunk.unity
+    guid: 5619c949d45755b44a27eebd94449201
+  - enabled: 1
+    path: Assets/Resources/Scenes/Battle_Boss_Trunk.unity
+    guid: 46fb2d2a34ead314aa2377c642f667b3
+  m_configObjects: {}
