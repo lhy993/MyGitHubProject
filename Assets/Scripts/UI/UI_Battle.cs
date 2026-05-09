@@ -59,11 +59,22 @@ public class UI_Battle : MonoBehaviour
     public GameObject tp_on;
     public GameObject stat_on;
     public GameObject GoldUi;
+    public GameObject Hurdle;
 
+    public GameObject SkeletonPrefab;
+    public GameObject GoblinPrefab;
+    public GameObject TrunkPrefab;
+    public GameObject SkeletonBoss;
+    public GameObject GoblinBoss;
+    public GameObject TrunkBoss;
     void Start()
     {
         inventory_On = true;
         inventory();
+        Reset();
+    }
+    public void Reset()
+    {
         if (Shared.BattleMgr.EnemyStage < 100)
         {
             BossStage = false;
@@ -72,21 +83,54 @@ public class UI_Battle : MonoBehaviour
         {
             BossStage = true;
         }
-        Revive.gameObject.SetActive(false);
-        HEART[0].gameObject.SetActive(BossStage);
-        HEART[1].gameObject.SetActive(BossStage);
-        HEART[2].gameObject.SetActive(BossStage);
+        Revive.SetActive(false);
+        HEART[0].SetActive(BossStage);
+        HEART[1].SetActive(BossStage);
+        HEART[2].SetActive(BossStage);
         BossHp.SetActive(BossStage);
-        inventory_on.gameObject.SetActive(!BossStage);
-        tp_on.gameObject.SetActive(!BossStage);
-        stat_on.gameObject.SetActive(!BossStage);
-        GoldUi.gameObject.SetActive(!BossStage);
+        inventory_on.SetActive(!BossStage);
+        tp_on.SetActive(!BossStage);
+        stat_on.SetActive(!BossStage);
+        GoldUi.SetActive(!BossStage);
+        Hurdle.SetActive(!BossStage);
 
-        if (Shared.BattleMgr.EnemyStage > 100)
+        switch (Shared.BattleMgr.EnemyStage)
         {
-
+            case 1:
+                {
+                    Instantiate(GoblinPrefab, new Vector3(5, -2, 0), Quaternion.identity);
+                    Instantiate(GoblinPrefab, new Vector3(-7, 4, 0), Quaternion.identity);
+                    break;
+                }
+            case 2:
+                {
+                    Instantiate(SkeletonPrefab, new Vector3(5, -2, 0), Quaternion.identity);
+                    Instantiate(SkeletonPrefab, new Vector3(-7, 4, 0), Quaternion.identity);
+                    break;
+                }
+            case 3:
+                {
+                    Instantiate(TrunkPrefab, new Vector3(3, -2, 0), Quaternion.identity);
+                    Instantiate(TrunkPrefab, new Vector3(5, -2, 0), Quaternion.identity);
+                    break;
+                }
+            case 101:
+                {
+                    Instantiate(GoblinBoss, new Vector3(0, 0, 0), Quaternion.identity);
+                    break;
+                }
+            case 102:
+                {
+                    Instantiate(SkeletonBoss, new Vector3(0, 0, 0), Quaternion.identity);
+                    break;
+                }
+            case 103:
+                {
+                    Instantiate(TrunkBoss, new Vector3(0, 0, 0), Quaternion.identity);
+                    break;
+                }
         }
-
+        Shared.BattleMgr.enemyCount = 2;
     }
     void Update()
     {
@@ -113,6 +157,12 @@ public class UI_Battle : MonoBehaviour
             COMBO.text = "";
         }
             Portal_Btn.SetActive(Shared.BattleMgr.playerInRange);
+
+        if(Shared.BattleMgr.PortalReset  == true)
+        {
+            Shared.BattleMgr.PortalReset = false;
+            Reset();    
+        }
     }
     public virtual void inventory()
     {

@@ -16,7 +16,6 @@ public class BattleMgr : MonoBehaviour
         }
     }
     public bool recovery;
-    public bool Respawn;
     public int EnemyStage;
     public bool isRespawning = false;
     public int life;
@@ -34,6 +33,8 @@ public class BattleMgr : MonoBehaviour
     public GameObject TrunkPrefab;
 
     public int FinalStage = 3;
+
+    public bool PortalReset;
 
     public bool[] Clear = new bool[4];
     void Start()
@@ -81,10 +82,6 @@ public class BattleMgr : MonoBehaviour
         {
             StartCoroutine(RecoveryUpdate());
         }
-        if (Shared.StatMgr.Death)
-        {
-            StartCoroutine(Death());
-        }
         if (ComboTime > 0)
         {
             ComboTime -= Time.deltaTime;
@@ -94,12 +91,7 @@ public class BattleMgr : MonoBehaviour
             ComboHit = 0;
             ComboDmg = 0;
         }
-    }
-    IEnumerator Death()
-    {
-        yield return new WaitForSeconds(1f); 
-        Respawn = true;  
-    }   
+    } 
     IEnumerator RecoveryUpdate()
     {
         recovery = false;

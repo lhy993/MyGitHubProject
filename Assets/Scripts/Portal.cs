@@ -6,6 +6,8 @@ public class Portal : MonoBehaviour
 {
     public TMP_Text TIPTEXT;
     public int NeedLv;
+    public GameObject PLAYER;
+    
     void Update()
     {
     }
@@ -25,58 +27,25 @@ public class Portal : MonoBehaviour
     }
     public void PortalBtn()
     {
-        switch (Shared.BattleMgr.EnemyStage)
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in enemies)
         {
-            case 1://°íºí¸°
-                {
-                    Shared.BattleMgr.life = 3;
-                    PortalLv(SCENE.Battle_Boss_Goblin);
-                    break;
-                }
-            case 101://°íºí¸° º¸½º
-                {
-                    Shared.BattleMgr.enemyCount = 0;
-                    PortalLv(SCENE.Battle_Goblin);
-                    break;
-                }
-            case 2://½ºÄÌ·¹Åæ 
-                {
-                    Shared.BattleMgr.life = 3;
-                    PortalLv(SCENE.Battle_Boss_Skeleton);
-                    break;
-                }
-            case 102://½ºÄÌ·¹Åæ º¸½º
-                {
-                    Shared.BattleMgr.enemyCount = 0;
-                    PortalLv(SCENE.Battle_Skeleton);
-                    break;
-                }
-            case 3://Æ®··Å©
-                {
-                    PortalLv(SCENE.Battle_Boss_Trunk);
-                    break;
-                }
-            case 103://Æ®··Å© º¸½º
-                {
-                    Shared.BattleMgr.enemyCount = 0;
-                    Shared.BattleMgr.life = 3;
-                    PortalLv(SCENE.Battle_Trunk);
-                    break;
-                }
+            Destroy(enemy);
         }
-    }
-    public void PortalLv(SCENE scene)
-    {
         if (Shared.BattleMgr.EnemyStage > 100)
         {
-            Shared.BattleMgr.EnemyStage -= 100;
+            Shared.BattleMgr.PortalReset = true;
+            Shared.BattleMgr.EnemyStage -= 99;
             Shared.BattleMgr.enemyCount = 0;
-            Shared.SceneMgr.ChangeScene(scene);
+            PLAYER.transform.position = new Vector3(-15f, -3f, 0f);
         }
         else if (NeedLv <= Shared.StatMgr.Lv)
         {
+            Shared.BattleMgr.PortalReset = true;
+            Shared.BattleMgr.life = 3;
             Shared.BattleMgr.EnemyStage += 100;
-            Shared.SceneMgr.ChangeScene(scene);
+            PLAYER.transform.position = new Vector3(-15f, -3f, 0f);
         }
     }      
 

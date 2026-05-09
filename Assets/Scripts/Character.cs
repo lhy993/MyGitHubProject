@@ -38,6 +38,7 @@ public partial class Character : MonoBehaviour
     public GameObject Revive;
     public Item reviveItem;
     public float moveDir = 0f;
+    public bool Death = false;
     // 시작 시 초기화
     void Start()
     {
@@ -53,11 +54,7 @@ public partial class Character : MonoBehaviour
 
     void Update()
     {
-        if (Shared.BattleMgr.Respawn)
-        {
-            Respawn();
-        }
-        if (!Shared.StatMgr.Death)
+        if (!Death)
         {
             // 공격 콤보 타이머 증가
             m_timeSinceAttack += Time.deltaTime;
@@ -227,7 +224,7 @@ public partial class Character : MonoBehaviour
     public void TakeDamage(float Damage)
     {
 
-        if (!Shared.StatMgr.Death)
+        if (!Death)
         {
             if (block == true)
             {
@@ -262,16 +259,17 @@ public partial class Character : MonoBehaviour
                         Shared.SceneMgr.ChangeScene(SCENE.Lobby);
                     }
                 }
+                Death = true;
                 m_animator.SetBool("noBlood", m_noBlood);
                 m_animator.SetTrigger("Death");
-                Shared.StatMgr.Death = true;
+                StartCoroutine(Respawn());
             }
         }
     }
-    public void Respawn()
+    public IEnumerator Respawn()
     {
-        Shared.BattleMgr.Respawn = false;
-        Shared.StatMgr.Death = false;
+        yield return new WaitForSeconds(1f);
+        Death = false;
         Shared.StatMgr.Hp = Shared.StatMgr.Max_Hp;
         transform.position = new Vector3(-15f, -3f, 0f);
         m_animator.SetTrigger("Hurt");

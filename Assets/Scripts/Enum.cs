@@ -8,5 +8,6 @@ public enum SCENE
     Battle_Skeleton,
     Battle_Boss_Skeleton,
     Battle_Trunk,
-    Battle_Boss_Trunk
+    Battle_Boss_Trunk,
+    Battle
 }

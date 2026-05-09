@@ -21,9 +21,8 @@ public class UiLogin : MonoBehaviour
         if (!string.IsNullOrWhiteSpace(NICKNAME.text))
         {
             Shared.UserMgr.UserName = NICKNAME.text;
-            Shared.BattleMgr.enemyCount = 0;
             Shared.BattleMgr.EnemyStage = 1;
-            Shared.SceneMgr.ChangeScene(SCENE.Battle_Goblin);
+            Shared.SceneMgr.ChangeScene(SCENE.Battle);
         }
     }
 

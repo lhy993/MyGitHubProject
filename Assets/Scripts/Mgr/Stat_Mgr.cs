@@ -33,8 +33,6 @@ public class StatMgr : MonoBehaviour
     public int Lv = 0;
     public int Stat_point = 0;
 
-    public bool Death = false;  
-
     public float Sword_Dmg;
 
     private void Start()
