@@ -2210,6 +2210,10 @@ PrefabInstance:
       propertyPath: PLAYER
       value: 
       objectReference: {fileID: 460151597}
+    - target: {fileID: 5994096873767886910, guid: 081fb75131144b94ea9a72a6d42a667e, type: 3}
+      propertyPath: Ui_Battle
+      value: 
+      objectReference: {fileID: 8373829276255686227}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2476,6 +2480,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1395708629}
     - target: {fileID: 7218790711055675154, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
+      propertyPath: PLAYER
+      value: 
+      objectReference: {fileID: 460151597}
+    - target: {fileID: 7218790711055675154, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
+      propertyPath: Portal
+      value: 
+      objectReference: {fileID: 642141805889896461}
+    - target: {fileID: 7218790711055675154, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
+      propertyPath: TrunkBoss
+      value: 
+      objectReference: {fileID: 5564272616765679255, guid: bbf6a922fbca70342b560972a845806a, type: 3}
+    - target: {fileID: 7218790711055675154, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
+      propertyPath: GoblinBoss
+      value: 
+      objectReference: {fileID: 229359351365961998, guid: 0e2c2f556ea382e41860dda5506e25cd, type: 3}
+    - target: {fileID: 7218790711055675154, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
       propertyPath: TrunkPrefab
       value: 
       objectReference: {fileID: 1020408240834901123, guid: bc4fa9efbcdd36d41a64f31a80d33478, type: 3}
@@ -2483,6 +2503,10 @@ PrefabInstance:
       propertyPath: GoblinPrefab
       value: 
       objectReference: {fileID: 2315390164619329157, guid: 13d93ff7c3a69f64f9303981ab36d3b6, type: 3}
+    - target: {fileID: 7218790711055675154, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
+      propertyPath: SkeletonBoss
+      value: 
+      objectReference: {fileID: 4564597568987312316, guid: 7759f836d5f2b6f438d562b10e59a0c2, type: 3}
     - target: {fileID: 7218790711055675154, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
       propertyPath: SkeletonPrefab
       value: 
@@ -2540,6 +2564,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8373829276255686227 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7218790711055675154, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
+  m_PrefabInstance: {fileID: 8373829276255686224}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aa32a7ed58cc9f47947066c0841ced5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807

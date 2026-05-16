@@ -9,6 +9,8 @@ TagManager:
   - ClearZone
   - Enemy
   - Portal
+  - BossBar
+  - BossHpText
   layers:
   - Default
   - TransparentFX

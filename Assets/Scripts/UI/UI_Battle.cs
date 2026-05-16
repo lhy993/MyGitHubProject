@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
@@ -67,11 +69,15 @@ public class UI_Battle : MonoBehaviour
     public GameObject SkeletonBoss;
     public GameObject GoblinBoss;
     public GameObject TrunkBoss;
+
+    public GameObject PLAYER;
+
+    public STAGE Stage;
     void Start()
     {
         inventory_On = true;
         inventory();
-        Reset();
+        TpGoblin();
     }
     public void Reset()
     {
@@ -93,6 +99,15 @@ public class UI_Battle : MonoBehaviour
         stat_on.SetActive(!BossStage);
         GoldUi.SetActive(!BossStage);
         Hurdle.SetActive(!BossStage);
+
+        PLAYER.transform.position = new Vector3(-15f, -3f, 0f);
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
 
         switch (Shared.BattleMgr.EnemyStage)
         {
@@ -116,16 +131,19 @@ public class UI_Battle : MonoBehaviour
                 }
             case 101:
                 {
+                    Shared.BattleMgr.life = 3;
                     Instantiate(GoblinBoss, new Vector3(0, 0, 0), Quaternion.identity);
                     break;
                 }
             case 102:
                 {
+                    Shared.BattleMgr.life = 3;
                     Instantiate(SkeletonBoss, new Vector3(0, 0, 0), Quaternion.identity);
                     break;
                 }
             case 103:
                 {
+                    Shared.BattleMgr.life = 3;
                     Instantiate(TrunkBoss, new Vector3(0, 0, 0), Quaternion.identity);
                     break;
                 }
@@ -157,12 +175,6 @@ public class UI_Battle : MonoBehaviour
             COMBO.text = "";
         }
             Portal_Btn.SetActive(Shared.BattleMgr.playerInRange);
-
-        if(Shared.BattleMgr.PortalReset  == true)
-        {
-            Shared.BattleMgr.PortalReset = false;
-            Reset();    
-        }
     }
     public virtual void inventory()
     {
@@ -232,10 +244,6 @@ public class UI_Battle : MonoBehaviour
             STATinputField.text = "1";
         }
     }
-    public void LobbyBtn()
-    {
-            Shared.SceneMgr.ChangeScene(SCENE.Lobby);   
-    }
 
     public void MenuBtn()
     {
@@ -278,21 +286,29 @@ public class UI_Battle : MonoBehaviour
     }
     public void TpGoblin()
     {
-        Shared.BattleMgr.enemyCount = 0;
-        Shared.BattleMgr.EnemyStage = 1;
-        Shared.SceneMgr.ChangeScene(SCENE.Battle_Goblin);
+        ChangeStage(STAGE.Goblin);
+        TP.SetActive(false);
     }
     public void TpSkeleton()
     {
-        Shared.BattleMgr.enemyCount = 0;
-        Shared.BattleMgr.EnemyStage = 2;
-        Shared.SceneMgr.ChangeScene(SCENE.Battle_Skeleton);
+        ChangeStage(STAGE.Skeleton);
+        TP.SetActive(false);
     }
     public void TpTrunk()
     {
-        Shared.BattleMgr.enemyCount = 0;
-        Shared.BattleMgr.EnemyStage = 3;
-        Shared.SceneMgr.ChangeScene(SCENE.Battle_Trunk);
+        ChangeStage(STAGE.Trunk);
+        TP.SetActive(false);
+    }
+    public void ChangeStage(STAGE _e)
+    {
+        if (Stage == _e)
+        {
+            return;
+        }
+        Stage = _e;
+        Shared.BattleMgr.EnemyStage = (int)_e;
+        Reset();
+
     }
     public void Hp_Stat_Btn()
     {
@@ -333,7 +349,7 @@ public class UI_Battle : MonoBehaviour
     {
         Time.timeScale = 1f;
         Revive.SetActive(false);
-        Shared.SceneMgr.ChangeScene(SCENE.Lobby);
+        Shared.SceneMgr.ChangeScene(SCENE.Battle);
     }
 }
 

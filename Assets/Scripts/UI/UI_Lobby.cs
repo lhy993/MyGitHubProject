@@ -48,20 +48,20 @@ public class UI_Lobby : MonoBehaviour
     {
         Shared.BattleMgr.enemyCount = 0;
         Shared.BattleMgr.EnemyStage = 1;
-        Shared.SceneMgr.ChangeScene(SCENE.Battle_Goblin);
+        //Shared.SceneMgr.ChangeScene(SCENE.Battle_Goblin);
     }
     public void Skeleton_Btn()
     {
         Shared.BattleMgr.enemyCount = 0;
         Shared.BattleMgr.EnemyStage = 2;
-        Shared.SceneMgr.ChangeScene(SCENE.Battle_Skeleton);
+       // Shared.SceneMgr.ChangeScene(SCENE.Battle_Skeleton);
     }
 
     public void Trunk_Btn()
     {
         Shared.BattleMgr.enemyCount = 0;
         Shared.BattleMgr.EnemyStage = 3;
-        Shared.SceneMgr.ChangeScene(SCENE.Battle_Trunk);
+      //  Shared.SceneMgr.ChangeScene(SCENE.Battle_Trunk);
     }
     public void ReturnBtn()
     {

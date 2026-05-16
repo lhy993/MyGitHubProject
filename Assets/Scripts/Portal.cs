@@ -6,8 +6,9 @@ public class Portal : MonoBehaviour
 {
     public TMP_Text TIPTEXT;
     public int NeedLv;
-    public GameObject PLAYER;
-    
+
+    public UI_Battle Ui_Battle;
+
     void Update()
     {
     }
@@ -29,24 +30,16 @@ public class Portal : MonoBehaviour
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        foreach (GameObject enemy in enemies)
-        {
-            Destroy(enemy);
-        }
         if (Shared.BattleMgr.EnemyStage > 100)
         {
-            Shared.BattleMgr.PortalReset = true;
             Shared.BattleMgr.EnemyStage -= 99;
-            Shared.BattleMgr.enemyCount = 0;
-            PLAYER.transform.position = new Vector3(-15f, -3f, 0f);
-        }
+            Ui_Battle.Reset();
+}
         else if (NeedLv <= Shared.StatMgr.Lv)
         {
-            Shared.BattleMgr.PortalReset = true;
-            Shared.BattleMgr.life = 3;
             Shared.BattleMgr.EnemyStage += 100;
-            PLAYER.transform.position = new Vector3(-15f, -3f, 0f);
-        }
+            Ui_Battle.Reset();
+        }   
     }      
 
     void OnTriggerEnter2D(Collider2D other)

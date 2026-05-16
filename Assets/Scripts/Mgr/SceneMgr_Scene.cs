@@ -8,7 +8,7 @@ public partial class SceneMgr : MonoBehaviour
 {
     public SCENE Scene;
 
-    public void ChangeScene(SCENE _e, bool _Loding = false)
+    public void ChangeScene(SCENE _e)
     {
         if (Scene == _e)
             return;

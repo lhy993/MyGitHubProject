@@ -244,6 +244,13 @@ MonoBehaviour:
   tp_on: {fileID: 1022445969731867687}
   stat_on: {fileID: 3675323281110185467}
   GoldUi: {fileID: 3186650500618554840}
+  Hurdle: {fileID: 0}
+  SkeletonPrefab: {fileID: 0}
+  GoblinPrefab: {fileID: 0}
+  TrunkPrefab: {fileID: 0}
+  SkeletonBoss: {fileID: 0}
+  GoblinBoss: {fileID: 0}
+  TrunkBoss: {fileID: 0}
 --- !u!1001 &450230897793915182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2142,6 +2149,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4256992970717882661, guid: f31a1dca951c5404f88e0c2c8bdcfdb7, type: 3}
+      propertyPath: m_TagString
+      value: BossHpText
+      objectReference: {fileID: 0}
     - target: {fileID: 8582914182648544088, guid: f31a1dca951c5404f88e0c2c8bdcfdb7, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2153,6 +2164,10 @@ PrefabInstance:
     - target: {fileID: 8815182478172517475, guid: f31a1dca951c5404f88e0c2c8bdcfdb7, type: 3}
       propertyPath: m_Name
       value: Boss Hp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815182478172517475, guid: f31a1dca951c5404f88e0c2c8bdcfdb7, type: 3}
+      propertyPath: m_TagString
+      value: BossBar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

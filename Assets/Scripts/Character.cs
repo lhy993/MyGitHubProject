@@ -256,7 +256,7 @@ public partial class Character : MonoBehaviour
                     }
                     else
                     {
-                        Shared.SceneMgr.ChangeScene(SCENE.Lobby);
+                        Shared.SceneMgr.ChangeScene(SCENE.Battle);
                     }
                 }
                 Death = true;

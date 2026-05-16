@@ -76,6 +76,7 @@ public class Enemy : MonoBehaviour
             if (p != null)
                 PLAYER = p.gameObject;
         }
+        EnemyAwake();
     }
     public virtual void EnemyAwake()
     {
@@ -86,6 +87,11 @@ public class Enemy : MonoBehaviour
         EnemyStat();
         patrolCenter = transform.position;
         currentState = State.Patrol;
+        EnemyStart();
+    }
+    public virtual void EnemyStart()
+    {
+
     }
     public void Respawn()
     {

@@ -15,7 +15,6 @@ public class BattleMgr : MonoBehaviour
             DontDestroyOnLoad(this);    
         }
     }
-    public bool recovery;
     public int EnemyStage;
     public bool isRespawning = false;
     public int life;
@@ -34,14 +33,13 @@ public class BattleMgr : MonoBehaviour
 
     public int FinalStage = 3;
 
-    public bool PortalReset;
 
     public bool[] Clear = new bool[4];
     void Start()
     {
         enemyCount = 1;
         Clear[0] = true;
-        recovery = true;
+        StartCoroutine(RecoveryUpdate());
     }
     IEnumerator EnemyRespawn()
     {
@@ -78,10 +76,6 @@ public class BattleMgr : MonoBehaviour
             isRespawning = true;
             StartCoroutine(EnemyRespawn());
         }
-        if (recovery)
-        {
-            StartCoroutine(RecoveryUpdate());
-        }
         if (ComboTime > 0)
         {
             ComboTime -= Time.deltaTime;
@@ -91,14 +85,16 @@ public class BattleMgr : MonoBehaviour
             ComboHit = 0;
             ComboDmg = 0;
         }
-    } 
+    }   
     IEnumerator RecoveryUpdate()
     {
-        recovery = false;
-        yield return new WaitForSeconds(5f);
-        Shared.StatMgr.Hp = Recovery(Shared.StatMgr.Hp, Shared.StatMgr.Max_Hp);
-        Shared.StatMgr.Mp = Recovery(Shared.StatMgr.Mp, Shared.StatMgr.Max_Mp);
-        recovery = true;
+        while (true)
+        {
+            yield return new WaitForSeconds(5f);
+
+            Shared.StatMgr.Hp = Recovery(Shared.StatMgr.Hp, Shared.StatMgr.Max_Hp);
+            Shared.StatMgr.Mp = Recovery(Shared.StatMgr.Mp, Shared.StatMgr.Max_Mp);
+        }
     }
     float Recovery(float f,float maxf)
     {

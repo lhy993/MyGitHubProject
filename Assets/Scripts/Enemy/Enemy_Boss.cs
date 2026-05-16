@@ -13,16 +13,22 @@ public class Enemy_Boss : Enemy
     public Slider BossHpSlider;
 
     public GameObject PORTAL;
-    int a;
+
     public override void EnemyAwake()
     {
-
+        BossHPText = GameObject.FindWithTag("BossHpText").GetComponent<Text>();
+        BossHpSlider = GameObject.FindWithTag("BossBar").GetComponent<Slider>();
+        PORTAL = GameObject.FindWithTag("Portal");
+    }
+    public override void EnemyStart()
+    {
+        PORTAL.SetActive(false);
     }
     public override void EnemyStat()
     {
         Enemy_Lv = 15;
         Enemy_Max_Hp = 100 + (Enemy_Lv * 50);
-        Enemy_Dmg = 3 + (Enemy_Lv * 2);
+        Enemy_Dmg = 3 + (Enemy_Lv * 2); 
         Enemy_Def = 10;
 
         Enemy_Hp = Enemy_Max_Hp;
@@ -38,10 +44,17 @@ public class Enemy_Boss : Enemy
     }
     public override void EnemyUpdate()
     {
-        BossHpSlider.maxValue = Enemy_Max_Hp;
-        BossHpSlider.value = Enemy_Hp;
+        if ( BossHPText != null && BossHpSlider != null)
+        {
+            BossHpSlider.maxValue = Enemy_Max_Hp;
+            BossHpSlider.value = Enemy_Hp;
 
-        BossHPText.text = ("Hp " + Enemy_Hp.ToString() + " / " + Enemy_Max_Hp.ToString());
+            BossHPText.text = ("Hp " + Enemy_Hp.ToString() + " / " + Enemy_Max_Hp.ToString());
+        }
+        else
+        {
+            Debug.Log("null");
+        }
     }
     public override void Drop()
     {
