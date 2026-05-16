@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using static Item;
 
 public class ItemDetailUI : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class ItemDetailUI : MonoBehaviour
     public GameObject upgradeButton;
     public Text DmgText;
     private InventorySlot currentSlot;
-   
+    public GameObject equipButton;
+    public Text equipButtonText;
 
     public void Show(InventorySlot slot)
     {
@@ -28,12 +30,35 @@ public class ItemDetailUI : MonoBehaviour
         else
         {
             upgradeText.text = "°­È­: +" + slot.itemInstance.upgradeLevel;
-            DmgText.text = slot.itemInstance.sword_dmg + "dmg";
+            DmgText.text = $"{slot.itemInstance.sword_dmg}dmg";
             upgradeButton.SetActive(true); //¹öÆ° º¸ÀÌ±â
             DmgText.gameObject.SetActive(true);
         }
-    }
+        if (slot.itemInstance.item.itemType == ItemType.Weapon)
+        {
+            equipButton.SetActive(true);
 
+            //ÀåÂø ¿©ºÎ °Ë»ç
+            if (EquipmentManager.instance.equippedWeapon == slot)
+            {
+                equipButtonText.text = "ÀåÂøµÊ";
+            }
+            else
+            {
+                equipButtonText.text = "ÀåÂø";
+            }
+        }
+        else
+        {
+            equipButton.SetActive(false);
+        }
+    }
+    public void OnClickEquip()
+    {
+        EquipmentManager.instance.EquipWeapon(currentSlot);
+
+        Refresh();
+    }
     public void Hide()
     {
         gameObject.SetActive(false);
@@ -70,6 +95,16 @@ public class ItemDetailUI : MonoBehaviour
 
         upgradeText.text = "°­È­: +" + currentSlot.itemInstance.upgradeLevel;
 
-        DmgText.text = currentSlot.itemInstance.sword_dmg + " dmg";
+        DmgText.text = $"{currentSlot.itemInstance.sword_dmg} dmg";
+
+        if (EquipmentManager.instance.equippedWeapon == currentSlot)
+        {
+            equipButtonText.text = "ÀåÂøµÊ";
+        }
+        else
+        {
+            equipButtonText.text = "ÀåÂø";
+        }
     }
+
 }

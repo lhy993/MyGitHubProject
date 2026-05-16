@@ -216,9 +216,9 @@ public class UI_Battle : MonoBehaviour
         mpSlider.maxValue = Shared.StatMgr.Max_Mp;
         mpSlider.value = Shared.StatMgr.Mp;
 
-        HPText.text = ("Hp " + Mathf.FloorToInt(Shared.StatMgr.Hp) + " / " + Shared.StatMgr.Max_Hp.ToString());
-        EXPText.text = (Shared.StatMgr.Lv.ToString() + "LV    " + "Exp " + Shared.StatMgr.Exp.ToString() + " / " + Shared.StatMgr.Need.ToString());
-        MPText.text = ("Mp " + Shared.StatMgr.Mp.ToString() + " / " + Shared.StatMgr.Max_Mp.ToString());
+        HPText.text = $"Hp{Mathf.FloorToInt(Shared.StatMgr.Hp)}  / {Shared.StatMgr.Max_Hp.ToString()}";
+        EXPText.text = $"{Shared.StatMgr.Lv.ToString()} LV + Exp + {Shared.StatMgr.Exp.ToString()} / {Shared.StatMgr.Need.ToString()}";
+        MPText.text = $"Mp {Shared.StatMgr.Mp.ToString()} / {Shared.StatMgr.Max_Mp.ToString()}";
     }
     public virtual void Stat()
     {
@@ -287,16 +287,19 @@ public class UI_Battle : MonoBehaviour
     public void TpGoblin()
     {
         ChangeStage(STAGE.Goblin);
+        Tp = false;
         TP.SetActive(false);
     }
     public void TpSkeleton()
     {
         ChangeStage(STAGE.Skeleton);
+        Tp = false;
         TP.SetActive(false);
     }
     public void TpTrunk()
     {
         ChangeStage(STAGE.Trunk);
+        Tp = false;
         TP.SetActive(false);
     }
     public void ChangeStage(STAGE _e)

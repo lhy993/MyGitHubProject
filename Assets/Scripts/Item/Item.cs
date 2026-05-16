@@ -8,4 +8,11 @@ public class Item : ScriptableObject
     public bool isStackable;
     public int price;
     public int normalDmg;
+    public ItemType itemType;
+
+    public enum ItemType
+    {
+        Consumable,
+        Weapon
+    }
 }

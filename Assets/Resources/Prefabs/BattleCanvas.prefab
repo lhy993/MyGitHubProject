@@ -111,19 +111,19 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1695682075100930586}
   - {fileID: 4173339155733258498}
   - {fileID: 1699400142226165876}
   - {fileID: 3518787550721214304}
   - {fileID: 1000947687201203900}
-  - {fileID: 1695682075100930586}
   - {fileID: 879734005781195877}
-  - {fileID: 9189273959657263394}
   - {fileID: 7526501852280822418}
   - {fileID: 3322613811229438789}
   - {fileID: 3979214075880658452}
   - {fileID: 8392728760965982462}
   - {fileID: 700645587386606215}
   - {fileID: 763384568860626662}
+  - {fileID: 9189273959657263394}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -251,6 +251,8 @@ MonoBehaviour:
   SkeletonBoss: {fileID: 0}
   GoblinBoss: {fileID: 0}
   TrunkBoss: {fileID: 0}
+  PLAYER: {fileID: 0}
+  Stage: 0
 --- !u!1001 &450230897793915182
 PrefabInstance:
   m_ObjectHideFlags: 0

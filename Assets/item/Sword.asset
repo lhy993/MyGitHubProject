@@ -17,3 +17,4 @@ MonoBehaviour:
   isStackable: 0
   price: 50
   normalDmg: 10
+  itemType: 1

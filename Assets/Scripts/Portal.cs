@@ -32,12 +32,12 @@ public class Portal : MonoBehaviour
 
         if (Shared.BattleMgr.EnemyStage > 100)
         {
-            Shared.BattleMgr.EnemyStage -= 99;
+            Ui_Battle.ChangeStage((STAGE)Shared.BattleMgr.EnemyStage - 99);
             Ui_Battle.Reset();
 }
         else if (NeedLv <= Shared.StatMgr.Lv)
         {
-            Shared.BattleMgr.EnemyStage += 100;
+            Ui_Battle.ChangeStage((STAGE)Shared.BattleMgr.EnemyStage + 100);
             Ui_Battle.Reset();
         }   
     }      
