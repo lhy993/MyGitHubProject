@@ -231,7 +231,6 @@ MonoBehaviour:
   ITEMDETA: {fileID: 6959579180616473765}
   inventory_On: 0
   inventory_return: {fileID: 5051725866632980423}
-  Portal_Btn: {fileID: 5618662476966741482}
   HEART:
   - {fileID: 5215037160375506481}
   - {fileID: 4492226544719199074}
@@ -252,6 +251,7 @@ MonoBehaviour:
   GoblinBoss: {fileID: 0}
   TrunkBoss: {fileID: 0}
   PLAYER: {fileID: 0}
+  INTERACTIONTEXT: {fileID: 5171834781174476142}
   Stage: 0
 --- !u!1001 &450230897793915182
 PrefabInstance:
@@ -1865,6 +1865,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -105
       objectReference: {fileID: 0}
+    - target: {fileID: 911406987439677176, guid: 176f9e5c2c1f13140b857023bc4f70f5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1420402228432311167, guid: 176f9e5c2c1f13140b857023bc4f70f5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 413.5249
@@ -2194,9 +2198,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6516183412111882585}
     m_Modifications:
+    - target: {fileID: 3183599949585907322, guid: 9507c4a09eb827e49884ace6d0cedee2, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3183599949585907322, guid: 9507c4a09eb827e49884ace6d0cedee2, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3183599949585907322, guid: 9507c4a09eb827e49884ace6d0cedee2, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3470367077399470422, guid: 9507c4a09eb827e49884ace6d0cedee2, type: 3}
+      propertyPath: m_Name
+      value: interaction
+      objectReference: {fileID: 0}
     - target: {fileID: 3470367077399470422, guid: 9507c4a09eb827e49884ace6d0cedee2, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185616382217046482, guid: 9507c4a09eb827e49884ace6d0cedee2, type: 3}
+      propertyPath: m_Text
+      value: "\uC0C1\uD638\n\uC791\uC6A9"
       objectReference: {fileID: 0}
     - target: {fileID: 4905655573845001971, guid: 9507c4a09eb827e49884ace6d0cedee2, type: 3}
       propertyPath: m_Name
@@ -2292,8 +2316,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5397922208232878760, guid: 9507c4a09eb827e49884ace6d0cedee2, type: 3}
   m_PrefabInstance: {fileID: 9065824908263580860}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5618662476966741482 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3470367077399470422, guid: 9507c4a09eb827e49884ace6d0cedee2, type: 3}
+--- !u!114 &5171834781174476142 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4185616382217046482, guid: 9507c4a09eb827e49884ace6d0cedee2, type: 3}
   m_PrefabInstance: {fileID: 9065824908263580860}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

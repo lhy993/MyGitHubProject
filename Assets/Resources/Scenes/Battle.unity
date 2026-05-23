@@ -186,9 +186,17 @@ PrefabInstance:
       propertyPath: m_jumpForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1453556608418485909, guid: 1b6dba98463cac54d814f214b355b9fe, type: 3}
+      propertyPath: INTERACTIONBTN
+      value: 
+      objectReference: {fileID: 8373829276255686229}
     - target: {fileID: 2208969367484951117, guid: 1b6dba98463cac54d814f214b355b9fe, type: 3}
       propertyPath: m_Name
       value: HeroKnight
+      objectReference: {fileID: 0}
+    - target: {fileID: 6703992474865571903, guid: 1b6dba98463cac54d814f214b355b9fe, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2003,17 +2011,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 081fb75131144b94ea9a72a6d42a667e, type: 3}
---- !u!114 &642141805889896460 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5994096873767886910, guid: 081fb75131144b94ea9a72a6d42a667e, type: 3}
-  m_PrefabInstance: {fileID: 642141805889896459}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642141805889896461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f5efd1d0e190464db4a79b3fc3de8c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &642141805889896461 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4975682679428462599, guid: 081fb75131144b94ea9a72a6d42a667e, type: 3}
@@ -2103,18 +2100,18 @@ PrefabInstance:
     - target: {fileID: 115266702199226361, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 642141805889896460}
+      objectReference: {fileID: 460151596}
     - target: {fileID: 115266702199226361, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 115266702199226361, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PortalBtn
+      value: InteractionBtn
       objectReference: {fileID: 0}
     - target: {fileID: 115266702199226361, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Portal, Assembly-CSharp
+      value: Character, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 115266702199226361, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2212,6 +2209,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6327468352257665105, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6516183412111882585, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2290,6 +2291,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6516183412111882585, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6959579180616473765, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7218790711055675154, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
@@ -2378,7 +2383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8753393960682419664, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9002723158140897220, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2431,6 +2436,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8373829276255686229 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5618662476966741482, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
+  m_PrefabInstance: {fileID: 8373829276255686224}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

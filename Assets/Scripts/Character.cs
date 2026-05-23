@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
@@ -39,6 +40,10 @@ public partial class Character : MonoBehaviour
     public Item reviveItem;
     public float moveDir = 0f;
     public bool Death = false;
+    public GameObject INTERACTIONBTN;
+
+    iinteraction currentInteractable;
+
     // 시작 시 초기화
     void Start()
     {
@@ -50,6 +55,7 @@ public partial class Character : MonoBehaviour
         m_wallSensorL1 = transform.Find("WallSensor_L1").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL2 = transform.Find("WallSensor_L2").GetComponent<Sensor_HeroKnight>();
         Shared.StatMgr.Stat();
+        INTERACTIONBTN.SetActive(false);
     }
 
     void Update()
@@ -288,6 +294,38 @@ public partial class Character : MonoBehaviour
         {
             GameObject dust = Instantiate(m_slideDust, spawnPosition, gameObject.transform.localRotation) as GameObject;
             dust.transform.localScale = new Vector3(m_facingDirection, 1, 1);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        iinteraction interactable =
+            collision.GetComponent<iinteraction>();
+
+        if (interactable != null)
+        {
+            currentInteractable = interactable;
+            INTERACTIONBTN.SetActive(true);
+            currentInteractable.Text();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        iinteraction interactable =
+            collision.GetComponent<iinteraction>();
+
+        if (interactable != null &&
+            currentInteractable == interactable)
+        {
+            currentInteractable = null;
+            INTERACTIONBTN.SetActive(false);
+        }
+    }
+    public void InteractionBtn()
+    {
+        if (currentInteractable != null)
+        {
+            currentInteractable.Interact();
         }
     }
 }

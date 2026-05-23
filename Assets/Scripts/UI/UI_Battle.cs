@@ -14,7 +14,7 @@ public class UI_Battle : MonoBehaviour
     public Text MP_STAT;
     public Text DMG_STAT;
     public Text DEF_STAT;
-    
+
     public Text STAT_POINT;
 
     public Text GOLDTEXT;
@@ -50,7 +50,6 @@ public class UI_Battle : MonoBehaviour
 
     public GameObject inventory_return;
 
-    public GameObject Portal_Btn;
     public GameObject[] HEART = new GameObject[3];
     public Item reviveItem;
     public GameObject Revive;
@@ -71,6 +70,8 @@ public class UI_Battle : MonoBehaviour
     public GameObject TrunkBoss;
 
     public GameObject PLAYER;
+
+    public Text INTERACTIONTEXT;
 
     public STAGE Stage;
     void Start()
@@ -168,13 +169,12 @@ public class UI_Battle : MonoBehaviour
 
         if (Shared.BattleMgr.ComboHit > 0)
         {
-            COMBO.text = (Shared.BattleMgr.ComboHit + "Hit\n" +Shared.BattleMgr.ComboDmg + "Dmg");
+            COMBO.text = (Shared.BattleMgr.ComboHit + "Hit\n" + Shared.BattleMgr.ComboDmg + "Dmg");
         }
         else
         {
             COMBO.text = "";
         }
-            Portal_Btn.SetActive(Shared.BattleMgr.playerInRange);
     }
     public virtual void inventory()
     {
@@ -201,10 +201,10 @@ public class UI_Battle : MonoBehaviour
             HEART[Shared.BattleMgr.life].SetActive(false);
         }
     }
-        public virtual void Gold()
-        {   
-            GOLDTEXT.text = (Shared.UserMgr.gold.ToString());
-        }
+    public virtual void Gold()
+    {
+        GOLDTEXT.text = (Shared.UserMgr.gold.ToString());
+    }
     public virtual void Bar()
     {
         hpSlider.maxValue = Shared.StatMgr.Max_Hp;
@@ -216,9 +216,9 @@ public class UI_Battle : MonoBehaviour
         mpSlider.maxValue = Shared.StatMgr.Max_Mp;
         mpSlider.value = Shared.StatMgr.Mp;
 
-        HPText.text = $"Hp{Mathf.FloorToInt(Shared.StatMgr.Hp)}  / {Shared.StatMgr.Max_Hp.ToString()}";
-        EXPText.text = $"{Shared.StatMgr.Lv.ToString()} LV + Exp + {Shared.StatMgr.Exp.ToString()} / {Shared.StatMgr.Need.ToString()}";
-        MPText.text = $"Mp {Shared.StatMgr.Mp.ToString()} / {Shared.StatMgr.Max_Mp.ToString()}";
+        HPText.text = ("Hp " + Mathf.FloorToInt(Shared.StatMgr.Hp) + " / " + Shared.StatMgr.Max_Hp.ToString());
+        EXPText.text = (Shared.StatMgr.Lv.ToString() + "LV    " + "Exp " + Shared.StatMgr.Exp.ToString() + " / " + Shared.StatMgr.Need.ToString());
+        MPText.text = ("Mp " + Shared.StatMgr.Mp.ToString() + " / " + Shared.StatMgr.Max_Mp.ToString());
     }
     public virtual void Stat()
     {
@@ -226,7 +226,7 @@ public class UI_Battle : MonoBehaviour
         MP_STAT.text = ("Mp : " + Shared.StatMgr.Mp_Stat);
         DMG_STAT.text = ("Dmg : " + Shared.StatMgr.Dmg_Stat);
         DEF_STAT.text = ("Def : " + Shared.StatMgr.Def_Stat);
-        
+
         if (Input.GetKeyDown("e"))
         {
             MenuBtn();
@@ -287,19 +287,16 @@ public class UI_Battle : MonoBehaviour
     public void TpGoblin()
     {
         ChangeStage(STAGE.Goblin);
-        Tp = false;
         TP.SetActive(false);
     }
     public void TpSkeleton()
     {
         ChangeStage(STAGE.Skeleton);
-        Tp = false;
         TP.SetActive(false);
     }
     public void TpTrunk()
     {
         ChangeStage(STAGE.Trunk);
-        Tp = false;
         TP.SetActive(false);
     }
     public void ChangeStage(STAGE _e)
@@ -353,6 +350,10 @@ public class UI_Battle : MonoBehaviour
         Time.timeScale = 1f;
         Revive.SetActive(false);
         Shared.SceneMgr.ChangeScene(SCENE.Battle);
+    }
+    public void InteractionText(string e)
+    {
+        INTERACTIONTEXT.text = e;
     }
 }
 
