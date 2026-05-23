@@ -9,6 +9,8 @@ public class TestItemAdd : MonoBehaviour
     public Item Gold;
     public Item reviveItem;
 
+    public CraftRecipe ironSwordRecipe;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z))
@@ -34,6 +36,10 @@ public class TestItemAdd : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N))
         {
             Inventory.instance.AddItem(reviveItem, 1);
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            Inventory.instance.AddItem(reviveItem, 1);          
         }
     }
 }

@@ -16,8 +16,7 @@ public class EquipmentManager : MonoBehaviour
         equippedWeapon = slot;
 
         Debug.Log(slot.itemInstance.item.itemName + " ÀåÂø");
-
-        Shared.StatMgr.Sword_Dmg = 0;
+        Shared.StatMgr.Sword_Dmg = slot.itemInstance.sword_dmg;
     }
 
     public int GetWeaponDamage()

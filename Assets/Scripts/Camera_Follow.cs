@@ -18,7 +18,7 @@ public class CameraFollow : MonoBehaviour
         );
 
         // x값 제한
-        float clampedX = Mathf.Clamp(desiredPosition.x, -11f, 11f);
+        float clampedX = Mathf.Clamp(desiredPosition.x, -17f, 17f);
         desiredPosition.x = clampedX;
 
         // 부드럽게 이동

@@ -62,7 +62,11 @@ public class Portal : MonoBehaviour, iinteraction
     }
     public void Text()
     {
-        string e = $"Æ÷Å»ÀÔÀå";
-        Ui_Battle.InteractionText(e);
+        Ui_Battle.InteractionText("Æ÷Å» ÀÔÀå");
+    }
+
+    public void Tip(bool e)
+    {
+
     }
 }

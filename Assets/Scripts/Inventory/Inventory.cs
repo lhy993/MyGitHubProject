@@ -4,6 +4,7 @@ using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
 public class Inventory : MonoBehaviour
 {
@@ -147,5 +148,30 @@ public class Inventory : MonoBehaviour
     public bool HasItem(Item item, int amount)
     {
         return GetItemCount(item) >= amount;
+    }
+    public bool Craft(CraftRecipe recipe)
+    {
+        // 1. 재료 확인
+        foreach (var material in recipe.materials)
+        {
+            if (GetItemCount(material.item) < material.amount)
+            {
+                Debug.Log(material.item.itemName + " 부족");
+                return false;
+            }
+        }
+
+        // 2. 재료 제거
+        foreach (var material in recipe.materials)
+        {
+            RemoveItemByItem(material.item, material.amount);
+        }
+
+        // 3. 결과 지급
+        AddItem(recipe.resultItem, recipe.resultAmount);
+
+        Debug.Log(recipe.resultItem.itemName + " 제작 완료");
+
+        return true;
     }
 }
