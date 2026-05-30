@@ -8,8 +8,8 @@ public class TestItemAdd : MonoBehaviour
     public Item Sword;
     public Item Gold;
     public Item reviveItem;
-
     public CraftRecipe ironSwordRecipe;
+
 
     void Update()
     {
@@ -39,7 +39,7 @@ public class TestItemAdd : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.M))
         {
-            Inventory.instance.AddItem(reviveItem, 1);          
+            Inventory.instance.Craft(ironSwordRecipe);
         }
     }
 }
