@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9d22c3b1fbe829e44be7c8723eadbe9e
+guid: 6f4022f0f7fbc554898ccab625c95751
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Noto Sans KR
+  - Malgun Gothic
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

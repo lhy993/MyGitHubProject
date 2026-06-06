@@ -1,49 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 public class Portal : MonoBehaviour, iinteraction
 {
-    public TMP_Text TIPTEXT;
     public int NeedLv;
 
     public UI_Battle Ui_Battle;
-
-    void Update()
-    {
-    }
-    void Start()
-    {
-        TIPTEXT.gameObject.SetActive(Shared.BattleMgr.playerInRange);
-        if (Shared.BattleMgr.EnemyStage > 100)
-        {
-            TIPTEXT.text = ("포탈 버튼을 눌러 퇴장하기");
-            NeedLv = 0;
-        }
-        else
-        {
-            NeedLv = Shared.BattleMgr.EnemyStage * 5;
-            TIPTEXT.text = ("필요 레벨 " + NeedLv + "\n 포탈 버튼을 눌러 입장하기");
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Shared.BattleMgr.playerInRange = true;
-            TIPTEXT.gameObject.SetActive(true);
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Shared.BattleMgr.playerInRange = false;
-            TIPTEXT.gameObject.SetActive(false);
-        }
-    }
+    public TextMeshPro TIP;
 
     public void Interact()
     {
@@ -65,8 +30,17 @@ public class Portal : MonoBehaviour, iinteraction
         Ui_Battle.InteractionText("포탈 입장");
     }
 
-    public void Tip(bool e)
+    public void Tip()
     {
-
+            if (Shared.BattleMgr.EnemyStage > 100)
+            {
+                TIP.text = ("포탈 버튼을 눌러 퇴장하기");
+                NeedLv = 0;
+            }
+            else
+            {
+                NeedLv = Shared.BattleMgr.EnemyStage * 5;
+                TIP.text = ("필요 레벨 " + NeedLv + "\n 포탈 버튼을 눌러 입장하기");
+            }       
     }
 }

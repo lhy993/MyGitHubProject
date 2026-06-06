@@ -306,7 +306,7 @@ public partial class Character : MonoBehaviour
             currentInteractable = interactable;
             INTERACTIONBTN.SetActive(true);
             currentInteractable.Text();
-            currentInteractable.Tip(true);
+            currentInteractable.Tip();
         }
     }
 

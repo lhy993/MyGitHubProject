@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4242e5be2360c94409286db09ccf920f, type: 3}
-  m_Name: SkeletonSword
+  m_Script: {fileID: 11500000, guid: c1f5f5cb07b767945a44899e509bbb8c, type: 3}
+  m_Name: Trunk
   m_EditorClassIdentifier: 
-  itemName: "\uC2A4\uCF08\uB808\uD1A4\uC758 "
-  icon: {fileID: 21300000, guid: 8677cbebf2c5ad447a85dc84b0e9d042, type: 3}
-  isStackable: 0
-  price: 15
-  normalDmg: 15
-  itemType: 1
+  materials: []
+  resultItem: {fileID: 0}
+  resultAmount: 0

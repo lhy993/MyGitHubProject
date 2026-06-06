@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Forge : MonoBehaviour, iinteraction
@@ -8,6 +9,8 @@ public class Forge : MonoBehaviour, iinteraction
     public GameObject IMAGE;
 
     public CraftRecipe GoblinSwordRecipe;
+    public CraftRecipe SkeletonSwordRecipe;
+    public TextMeshPro TIP;
     public void Interact()
     {   
         IMAGE.SetActive(true);
@@ -18,7 +21,7 @@ public class Forge : MonoBehaviour, iinteraction
         Ui_Battle.InteractionText("제작 하기");
     }
 
-    public void Tip(bool e)
+    public void Tip()
     {
     }
     public void ReturnBtn()
@@ -28,6 +31,10 @@ public class Forge : MonoBehaviour, iinteraction
     public void GoblinSwordCraft()
     {
         Inventory.instance.Craft(GoblinSwordRecipe);
+    }
+    public void SkeletonSwordCraft()
+    {
+        Inventory.instance.Craft(SkeletonSwordRecipe);
     }
 
 }
