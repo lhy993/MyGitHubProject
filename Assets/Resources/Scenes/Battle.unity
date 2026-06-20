@@ -2117,12 +2117,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2056560126948129672, guid: 081fb75131144b94ea9a72a6d42a667e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056560126948129672, guid: 081fb75131144b94ea9a72a6d42a667e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056560126948129672, guid: 081fb75131144b94ea9a72a6d42a667e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2056560126948129672, guid: 081fb75131144b94ea9a72a6d42a667e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2056560126948129672, guid: 081fb75131144b94ea9a72a6d42a667e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2160,6 +2168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tip Text
       objectReference: {fileID: 0}
+    - target: {fileID: 2269499599555413161, guid: 081fb75131144b94ea9a72a6d42a667e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2350000996957361899, guid: 081fb75131144b94ea9a72a6d42a667e, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -2168,6 +2180,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2638011207782654517, guid: 58548662d8125534eb67696b36e0c4d8, type: 2}
+    - target: {fileID: 2350000996957361899, guid: 081fb75131144b94ea9a72a6d42a667e, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2350000996957361899, guid: 081fb75131144b94ea9a72a6d42a667e, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -2192,6 +2208,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2638011207782654517, guid: 58548662d8125534eb67696b36e0c4d8, type: 2}
+    - target: {fileID: 7617673824460642051, guid: 081fb75131144b94ea9a72a6d42a667e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617673824460642051, guid: 081fb75131144b94ea9a72a6d42a667e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2320,10 +2344,26 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 48
       objectReference: {fileID: 0}
+    - target: {fileID: 4650680589888866127, guid: c6c31db332a30c149b41810fe814a22c, type: 3}
+      propertyPath: m_text
+      value: forge
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364293066590916175, guid: c6c31db332a30c149b41810fe814a22c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6547128541461800896, guid: c6c31db332a30c149b41810fe814a22c, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: d660fb0fc7063524a93ebaf0860f8113, type: 3}
+    - target: {fileID: 7826032854244733332, guid: c6c31db332a30c149b41810fe814a22c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826032854244733332, guid: c6c31db332a30c149b41810fe814a22c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 8167987655277147251, guid: c6c31db332a30c149b41810fe814a22c, type: 3}
       propertyPath: IMAGE
       value: 
@@ -2410,6 +2450,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4841995245363689114, guid: 8b2137c6c7a2ca2419f594c57f19ef7e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8139075844383977774, guid: 8b2137c6c7a2ca2419f594c57f19ef7e, type: 3}
       propertyPath: TIP
       value: 
@@ -2430,9 +2474,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop
       objectReference: {fileID: 0}
+    - target: {fileID: 8209181950594939020, guid: 8b2137c6c7a2ca2419f594c57f19ef7e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8214410547327022709, guid: 8b2137c6c7a2ca2419f594c57f19ef7e, type: 3}
+      propertyPath: m_text
+      value: 'd
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 8214410547327022709, guid: 8b2137c6c7a2ca2419f594c57f19ef7e, type: 3}
       propertyPath: m_fontSize
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8214410547327022709, guid: 8b2137c6c7a2ca2419f594c57f19ef7e, type: 3}
       propertyPath: m_fontAsset
@@ -2440,11 +2494,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 58548662d8125534eb67696b36e0c4d8, type: 2}
     - target: {fileID: 8214410547327022709, guid: 8b2137c6c7a2ca2419f594c57f19ef7e, type: 3}
       propertyPath: m_fontStyle
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8214410547327022709, guid: 8b2137c6c7a2ca2419f594c57f19ef7e, type: 3}
       propertyPath: m_fontSizeBase
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8214410547327022709, guid: 8b2137c6c7a2ca2419f594c57f19ef7e, type: 3}
       propertyPath: m_sharedMaterial
@@ -2461,10 +2515,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4841995245363689114, guid: 8b2137c6c7a2ca2419f594c57f19ef7e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b2137c6c7a2ca2419f594c57f19ef7e, type: 3}
 --- !u!114 &4774677433846079094 stripped
 MonoBehaviour:
@@ -2482,12 +2533,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8139075844383977774, guid: 8b2137c6c7a2ca2419f594c57f19ef7e, type: 3}
   m_PrefabInstance: {fileID: 4774677433846079093}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 4774677433846079096}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57d938f33c6ab8243a56f041dc9f4a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &4774677433846079096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8209181950594939020, guid: 8b2137c6c7a2ca2419f594c57f19ef7e, type: 3}
+  m_PrefabInstance: {fileID: 4774677433846079093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4938709413657598986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2721,6 +2777,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7218790711055675154, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
+      propertyPath: Shop
+      value: 
+      objectReference: {fileID: 4774677433846079096}
     - target: {fileID: 7218790711055675154, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
       propertyPath: FORGE
       value: 

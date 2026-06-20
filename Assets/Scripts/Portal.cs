@@ -32,15 +32,23 @@ public class Portal : MonoBehaviour, iinteraction
 
     public void Tip()
     {
-            if (Shared.BattleMgr.EnemyStage > 100)
-            {
-                TIP.text = ("포탈 버튼을 눌러 퇴장하기");
-                NeedLv = 0;
-            }
-            else
-            {
-                NeedLv = Shared.BattleMgr.EnemyStage * 5;
-                TIP.text = ("필요 레벨 " + NeedLv + "\n 포탈 버튼을 눌러 입장하기");
-            }       
+        if (Shared.BattleMgr.EnemyStage > 100)
+        {
+            TIP.text = "Exit";
+            NeedLv = 0;
+        }
+        else
+        {
+            NeedLv = Shared.BattleMgr.EnemyStage * 5;
+            TIP.text = $"Lv. {NeedLv} Required";
+        }
+    }
+    public void TextOn()
+    {
+        TIP.gameObject.SetActive(true);
+    }
+    public void TextOff()
+    {
+        TIP.gameObject.SetActive(false);
     }
 }

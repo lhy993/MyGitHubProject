@@ -23,6 +23,7 @@ public class Forge : MonoBehaviour, iinteraction
 
     public void Tip()
     {
+        TIP.text = "Forge";
     }
     public void ReturnBtn()
     {
@@ -36,5 +37,12 @@ public class Forge : MonoBehaviour, iinteraction
     {
         Inventory.instance.Craft(SkeletonSwordRecipe);
     }
-
+    public void TextOn()
+    {
+        TIP.gameObject.SetActive(true);
+    }
+    public void TextOff()
+    {
+        TIP.gameObject.SetActive(false);
+    }
 }

@@ -306,22 +306,24 @@ public partial class Character : MonoBehaviour
             currentInteractable = interactable;
             INTERACTIONBTN.SetActive(true);
             currentInteractable.Text();
+            currentInteractable.TextOn();
             currentInteractable.Tip();
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        iinteraction interactable =
-            collision.GetComponent<iinteraction>();
-
-        if (interactable != null &&
-            currentInteractable == interactable)
+        private void OnTriggerExit2D(Collider2D collision)
         {
+            iinteraction interactable =
+                collision.GetComponent<iinteraction>();
+
+            if (interactable != null &&
+                currentInteractable == interactable)
+        {
+            currentInteractable.TextOff();
             currentInteractable = null;
             INTERACTIONBTN.SetActive(false);
+            }
         }
-    }
     public void InteractionBtn()
     {
         if (currentInteractable != null)

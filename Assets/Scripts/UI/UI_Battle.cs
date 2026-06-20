@@ -73,6 +73,7 @@ public class UI_Battle : MonoBehaviour
 
     public Text INTERACTIONTEXT;
     public GameObject FORGE;
+    public GameObject Shop;
 
     public STAGE Stage;
     void Start()
@@ -102,6 +103,7 @@ public class UI_Battle : MonoBehaviour
         GoldUi.SetActive(!BossStage);
         Hurdle.SetActive(!BossStage);
         FORGE.SetActive(false);
+        Shop.SetActive(false);
 
         PLAYER.transform.position = new Vector3(-15f, -3f, 0f);
 
@@ -118,13 +120,14 @@ public class UI_Battle : MonoBehaviour
                 {
                     Instantiate(GoblinPrefab, new Vector3(5, -2, 0), Quaternion.identity);
                     Instantiate(GoblinPrefab, new Vector3(-7, 4, 0), Quaternion.identity);
-                    //FORGE.SetActive(true);
+                    FORGE.SetActive(true);
                     break;
                 }
             case 2:
                 {
                     Instantiate(SkeletonPrefab, new Vector3(5, -2, 0), Quaternion.identity);
                     Instantiate(SkeletonPrefab, new Vector3(-7, 4, 0), Quaternion.identity);
+                    Shop.SetActive(true);
                     break;
                 }
             case 3:

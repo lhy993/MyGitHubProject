@@ -24,8 +24,7 @@ public class Shop : MonoBehaviour, iinteraction
     }
     public void Tip()
     {
-        TIP.text = $"골드를 사용하여 아이템을 구매할 수 있다";
-        Inventory.instance.AddItem(reviveItem, 1);
+        TIP.text = "Shop";
     }
     public void ReviveBuy()
     {
@@ -36,5 +35,12 @@ public class Shop : MonoBehaviour, iinteraction
         }
     }
 
-
+    public void TextOn()
+    {
+        TIP.gameObject.SetActive(true);
+    }
+    public void TextOff()
+    {
+        TIP.gameObject.SetActive(false);
+    }
 }
