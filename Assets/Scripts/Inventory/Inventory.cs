@@ -90,20 +90,11 @@ public class Inventory : MonoBehaviour
 
         return false; // 아이템 없음
     }
-    public void UpgradeItem(InventorySlot slot /*,Toggle SAFE*/ )
+    public void UpgradeItem(InventorySlot slot )
     {
         int currentLevel = slot.itemInstance.upgradeLevel;
-        /*if (SAFE.isOn && Shared.UserMgr.Safe >= 1 && Shared.UserMgr.gold >= Need_Gold)
-        {
-            Shared.UserMgr.Safe -= 1;
-            Shared.UserMgr.gold -= Need_Gold;
-            random = Random.Range(1, Max);
-            if (random <= 10)
-            {
-                slot.itemInstance.upgradeLevel++;
-            }
-        }*/
-        if (/*!SAFE.isOn &&*/ Shared.UserMgr.gold >= Need_Gold)
+
+        if ( Shared.UserMgr.gold >= Need_Gold)
         {
             Shared.UserMgr.gold -= Need_Gold;
             random = Random.Range(1, Max);
@@ -173,5 +164,33 @@ public class Inventory : MonoBehaviour
         Debug.Log(recipe.resultItem.itemName + " 제작 완료");
 
         return true;
+    }
+    public List<ItemData> GetSaveData()
+    {
+        List<ItemData> data = new List<ItemData>();
+
+
+        foreach (InventorySlot slot in slots)
+        {
+            ItemData itemData = new ItemData();
+
+
+            itemData.itemID =
+                slot.itemInstance.item.itemID;
+
+
+            itemData.amount =
+                slot.amount;
+
+
+            itemData.upgradeLevel =
+                slot.itemInstance.upgradeLevel;
+
+
+            data.Add(itemData);
+        }
+
+
+        return data;
     }
 }

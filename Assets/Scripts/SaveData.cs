@@ -5,26 +5,28 @@ using System.Collections.Generic;
 [Serializable]
 public class SaveData
 {
-    public string playerName;
-
-
-    // 플레이어 정보
     public int level;
-    public int exp;
+    public float exp;
 
-    public int hp;
-    public int mp;
+    public float hp;
+    public float mp;
 
 
-    // 인벤토리
     public List<ItemData> inventory;
 
 
-    // 진행도
-    public int clearStage;
+    public bool[] clearStage;
+
+    public int itemID;
+
+    public int amount;
 
 
-    // 스탯
+    public int upgradeLevel;
+
+
+    public bool isEquipped;
+
     public StatData stat;
 }
 
@@ -35,14 +37,12 @@ public class ItemData
 {
     public int itemID;
 
-    public int count;
+    public int amount;
 
 
-    // 강화
-    public int reinforceLevel;
+    public int upgradeLevel;
 
 
-    // 장착 여부
     public bool isEquipped;
 }
 

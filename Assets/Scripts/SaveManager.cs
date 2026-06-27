@@ -4,32 +4,22 @@ using System.IO;
 
 public class SaveManager : MonoBehaviour
 {
-    string saveFolder;
+    string path;
 
 
     void Awake()
     {
-        saveFolder =
-        Application.persistentDataPath + "/SaveData/";
-
-
-        if (!Directory.Exists(saveFolder))
-        {
-            Directory.CreateDirectory(saveFolder);
-        }
+        path =
+        Application.persistentDataPath
+        + "/SaveData.json";
     }
 
 
 
-    // 저장
     public void SaveGame(SaveData data)
     {
         string json =
         JsonUtility.ToJson(data, true);
-
-
-        string path =
-        saveFolder + data.playerName + ".json";
 
 
         File.WriteAllText(path, json);
@@ -40,13 +30,8 @@ public class SaveManager : MonoBehaviour
 
 
 
-    // 불러오기
-    public SaveData LoadGame(string playerName)
+    public SaveData LoadGame()
     {
-        string path =
-        saveFolder + playerName + ".json";
-
-
         if (File.Exists(path))
         {
             string json =

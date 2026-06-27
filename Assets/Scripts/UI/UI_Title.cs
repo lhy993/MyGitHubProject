@@ -13,7 +13,7 @@ public class UiTitle : MonoBehaviour
     }
     public void OnBtnTitle()
     {
-         Shared.SceneMgr.ChangeScene(SCENE.Login);
+        Shared.SceneMgr.ChangeScene(SCENE.Login);
     }   
     // Update is called once per frame
     void Update()

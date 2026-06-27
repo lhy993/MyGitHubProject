@@ -24,8 +24,7 @@ public class UiLogin : MonoBehaviour
             Shared.BattleMgr.EnemyStage = 1;
             Shared.SceneMgr.ChangeScene(SCENE.Battle);
         }
-    }
-
+    }   
 
     // Update is called once per frame
     void Update()
