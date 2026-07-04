@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4242e5be2360c94409286db09ccf920f, type: 3}
   m_Name: SkeletonSword
   m_EditorClassIdentifier: 
-  itemName: "\uC2A4\uCF08\uB808\uD1A4\uC758 "
+  itemID: 102
+  itemName: "\uC2A4\uCF08\uB808\uD1A4\uC758 \uAC80"
   icon: {fileID: 21300000, guid: 8677cbebf2c5ad447a85dc84b0e9d042, type: 3}
   isStackable: 0
   price: 15

@@ -43,7 +43,7 @@ public float Sword_Dmg;
     }
     public void Stat()
     {
-        Max_Hp = 50 + (10 * Hp_Stat);
+        Max_Hp = 50 + 10 * Hp_Stat;
 
         Dmg = Sword_Dmg + (Sword_Dmg * ((float)Dmg_Stat/100));
 
@@ -61,7 +61,7 @@ public float Sword_Dmg;
             Lv += 1;
             Stat_point += 3;
         }
-        Need = Lv * 30 * Lv;
+        Need = Lv * Lv * 30;
     }
     private void Update()
     {

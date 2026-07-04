@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4242e5be2360c94409286db09ccf920f, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
+  itemID: 100
   itemName: "\uAC80"
   icon: {fileID: 21300000, guid: 8dc08f6b662c3b1478223badca9fbff3, type: 3}
   isStackable: 0

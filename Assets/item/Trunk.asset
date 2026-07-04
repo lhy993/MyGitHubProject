@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4242e5be2360c94409286db09ccf920f, type: 3}
   m_Name: Trunk
   m_EditorClassIdentifier: 
+  itemID: 3
   itemName: "\uD2B8\uB801\uD06C\uC758 \uC528\uC557"
   icon: {fileID: 21300000, guid: f817ba5aabd773e4f914480bdd62d0c8, type: 3}
   isStackable: 1
   price: 15
+  normalDmg: 0
+  itemType: 0

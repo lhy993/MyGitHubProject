@@ -12,7 +12,18 @@ public class UiLogin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /*SaveData data = saveManager.LoadGame();
 
+     
+        if (data != null)
+        {
+            Load(data);
+        }
+       
+        else
+        {
+            CreateNewGame();
+        }*/
     }
 
 

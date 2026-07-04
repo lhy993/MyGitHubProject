@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4242e5be2360c94409286db09ccf920f, type: 3}
   m_Name: Skeleton
   m_EditorClassIdentifier: 
+  itemID: 2
   itemName: "\uC2A4\uCF08\uB798\uD1A4\uC758 \uBF08"
   icon: {fileID: 21300000, guid: a8cfcd43407307d4ea58552910b35f15, type: 3}
   isStackable: 1
   price: 10
+  normalDmg: 0
+  itemType: 0

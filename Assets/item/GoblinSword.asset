@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4242e5be2360c94409286db09ccf920f, type: 3}
   m_Name: GoblinSword
   m_EditorClassIdentifier: 
+  itemID: 101
   itemName: "\uACE0\uBE14\uB9B0\uC758 \uB2E8\uAC80"
   icon: {fileID: 21300000, guid: e5e362e1bd65d854a8c7550007c0b9a3, type: 3}
   isStackable: 0

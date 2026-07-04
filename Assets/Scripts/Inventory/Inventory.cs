@@ -193,4 +193,32 @@ public class Inventory : MonoBehaviour
 
         return data;
     }
+    public void LoadData(List<ItemData> data)
+    {
+        slots.Clear();
+
+        foreach (ItemData itemData in data)
+        {
+            // itemID로 Item 찾기
+            Item item = ItemDatabase.Instance.GetItem(itemData.itemID);
+
+            if (item == null)
+            {
+                Debug.LogWarning($"ItemID {itemData.itemID}를 찾을 수 없습니다.");
+                continue;
+            }
+
+            // ItemInstance 생성
+            ItemInstance itemInstance = new ItemInstance(item);
+            itemInstance.upgradeLevel = itemData.upgradeLevel;
+
+            // InventorySlot 생성
+            InventorySlot slot = new InventorySlot(itemInstance, itemData.amount);
+
+            slots.Add(slot);
+        }
+
+        if (ui != null)
+            ui.UpdateUI();
+    }
 }
