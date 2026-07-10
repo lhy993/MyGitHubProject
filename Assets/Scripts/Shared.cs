@@ -10,4 +10,8 @@ public static class Shared
     public static UserMgr UserMgr;
     public static BattleMgr BattleMgr;
     public static StatMgr StatMgr;
-}
+    public static EquipmentMgr EquipmentMgr;
+    public static GameMgr GameMgr;
+    public static InventoryMgr InventoryMgr;
+    public static SaveMgr SaveMgr;
+}   

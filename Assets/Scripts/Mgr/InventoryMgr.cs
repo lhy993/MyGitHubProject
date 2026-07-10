@@ -6,10 +6,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
-public class Inventory : MonoBehaviour
+public class InventoryMgr : MonoBehaviour
 {
     public InventoryUI ui;
-    public static Inventory instance;
     int random;
     int Max;
     int Need_Gold;
@@ -19,9 +18,9 @@ public class Inventory : MonoBehaviour
 
     private void Awake()    
     {
-        if (instance == null)
+        if (Shared.InventoryMgr == null)
         {
-            instance = this;
+            Shared.InventoryMgr = this;
             DontDestroyOnLoad(gameObject); 
         }
         else
@@ -112,6 +111,7 @@ public class Inventory : MonoBehaviour
             }
         }
         Upgrade(currentLevel);
+        Shared.EquipmentMgr.RefreshWeaponDamage();
         if (ui != null)
             ui.UpdateUI();
     }
@@ -186,8 +186,11 @@ public class Inventory : MonoBehaviour
             itemData.upgradeLevel =
                 slot.itemInstance.upgradeLevel;
 
+            itemData.isEquipped = 
+                slot.itemInstance.isEquipped;
 
             data.Add(itemData);
+
         }
 
 
@@ -211,11 +214,13 @@ public class Inventory : MonoBehaviour
             // ItemInstance 持失
             ItemInstance itemInstance = new ItemInstance(item);
             itemInstance.upgradeLevel = itemData.upgradeLevel;
+            itemInstance.isEquipped = itemData.isEquipped;
 
             // InventorySlot 持失
             InventorySlot slot = new InventorySlot(itemInstance, itemData.amount);
 
             slots.Add(slot);
+            Shared.EquipmentMgr.RefreshWeaponDamage();
         }
 
         if (ui != null)

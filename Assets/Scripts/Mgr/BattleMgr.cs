@@ -11,8 +11,11 @@ public class BattleMgr : MonoBehaviour
         if (Shared.BattleMgr == null)
         {
             Shared.BattleMgr = this;
-
-            DontDestroyOnLoad(this);    
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
     public int EnemyStage;

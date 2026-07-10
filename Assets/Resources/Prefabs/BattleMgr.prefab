@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3410182904669800034
+--- !u!1 &5318765476974044880
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2209262302865870670}
-  - component: {fileID: 5559163905423099598}
+  - component: {fileID: 6388816848225160703}
+  - component: {fileID: 4326919587084861319}
   m_Layer: 0
-  m_Name: Scene_Mgr
+  m_Name: BattleMgr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2209262302865870670
+--- !u!4 &6388816848225160703
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3410182904669800034}
+  m_GameObject: {fileID: 5318765476974044880}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3613038, y: 8.770826, z: -0.14326428}
+  m_LocalPosition: {x: -3.9685073, y: 0.891639, z: -0.010182651}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5559163905423099598
+--- !u!114 &4326919587084861319
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3410182904669800034}
+  m_GameObject: {fileID: 5318765476974044880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 496de8eaae54f8c48afd449fb803063b, type: 3}
+  m_Script: {fileID: 11500000, guid: 164682d7e9285b74884e158a7f70b137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scene: 0
+  EnemyStage: 0
+  isRespawning: 0
+  life: 0
+  enemyCount: 0
+  ComboDmg: 0
+  ComboHit: 0
+  ComboTime: 0
+  playerInRange: 0
+  SkeletonPrefab: {fileID: 0}
+  GoblinPrefab: {fileID: 0}
+  TrunkPrefab: {fileID: 0}
+  FinalStage: 3
+  Clear: 00000000

@@ -8,6 +8,9 @@ public class ItemInstance
 
     //개별 데이터
     public int upgradeLevel;
+
+    public bool isEquipped;
+
     public int sword_dmg
     {
         get

@@ -1,8 +1,7 @@
 public enum SCENE
 {
     Title,
-    Login,
-    Battle
+    Battle,
 }
 public enum STAGE
 {

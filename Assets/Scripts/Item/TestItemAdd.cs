@@ -10,36 +10,40 @@ public class TestItemAdd : MonoBehaviour
     public Item reviveItem;
     public CraftRecipe ironSwordRecipe;
 
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            Inventory.instance.AddItem(Goblin, 1);
+            Shared.InventoryMgr.AddItem(Goblin, 1);
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
-            Inventory.instance.AddItem(Skeleton, 1);
+            Shared.InventoryMgr.AddItem(Skeleton, 1);
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
-            Inventory.instance.AddItem(Trunk, 1);
+            Shared.InventoryMgr.AddItem(Trunk, 1);
         }
         if (Input.GetKeyDown(KeyCode.V))
         {
-            Inventory.instance.AddItem(Sword, 1);
+            Shared.InventoryMgr.AddItem(Sword, 1);
         }
         if (Input.GetKeyDown(KeyCode.B))
         {
-            Inventory.instance.AddItem(Gold, 1);
+            Shared.InventoryMgr.AddItem(Gold, 1);
         }
         if (Input.GetKeyDown(KeyCode.N))
         {
-            Inventory.instance.AddItem(reviveItem, 1);
+            Shared.InventoryMgr.AddItem(reviveItem, 1);
         }
         if (Input.GetKeyDown(KeyCode.M))
         {
-            Inventory.instance.Craft(ironSwordRecipe);
+            Shared.InventoryMgr.Craft(ironSwordRecipe);
         }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            Shared.SaveMgr.Save();
+        }
+        
     }
 }

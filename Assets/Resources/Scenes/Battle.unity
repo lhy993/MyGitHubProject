@@ -131,14 +131,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 745821269711296719, guid: 1b6dba98463cac54d814f214b355b9fe, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 745821269711296719, guid: 1b6dba98463cac54d814f214b355b9fe, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 745821269711296719, guid: 1b6dba98463cac54d814f214b355b9fe, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15
       objectReference: {fileID: 0}
@@ -179,24 +171,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1453556608418485909, guid: 1b6dba98463cac54d814f214b355b9fe, type: 3}
-      propertyPath: attackRange
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1453556608418485909, guid: 1b6dba98463cac54d814f214b355b9fe, type: 3}
-      propertyPath: m_jumpForce
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1453556608418485909, guid: 1b6dba98463cac54d814f214b355b9fe, type: 3}
       propertyPath: INTERACTIONBTN
       value: 
       objectReference: {fileID: 8373829276255686229}
     - target: {fileID: 2208969367484951117, guid: 1b6dba98463cac54d814f214b355b9fe, type: 3}
       propertyPath: m_Name
       value: HeroKnight
-      objectReference: {fileID: 0}
-    - target: {fileID: 6703992474865571903, guid: 1b6dba98463cac54d814f214b355b9fe, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2219,10 +2199,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2269499599555413161, guid: 081fb75131144b94ea9a72a6d42a667e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 081fb75131144b94ea9a72a6d42a667e, type: 3}
 --- !u!114 &642141805889896460 stripped
 MonoBehaviour:
@@ -2386,6 +2363,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2017722759208006297, guid: c6c31db332a30c149b41810fe814a22c, type: 3}
   m_PrefabInstance: {fileID: 2396823773975718562}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2396823773975718564 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8167987655277147251, guid: c6c31db332a30c149b41810fe814a22c, type: 3}
+  m_PrefabInstance: {fileID: 2396823773975718562}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2396823773975718563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fa8ac56770d2f1488863804aeba4c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4774677433846079093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2629,18 +2617,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4774677433846079095}
-    - target: {fileID: 707546292716778960, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReturnBtn
-      objectReference: {fileID: 0}
-    - target: {fileID: 707546292716778960, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Shop, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 862706450753983725, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1040742903229389394, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2692,11 +2668,11 @@ PrefabInstance:
     - target: {fileID: 5577558280997511721, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2396823773975718564}
     - target: {fileID: 6324272482332917711, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2396823773975718564}
     - target: {fileID: 6516183412111882585, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2805,18 +2781,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4774677433846079095}
-    - target: {fileID: 8582761630186928431, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReviveBuy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8582761630186928431, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Shop, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 8777513882980501916, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2396823773975718564}
     - target: {fileID: 9002723158140897220, guid: f1221075ae758b3478fd3e07b64f0d11, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

@@ -10,8 +10,11 @@ public class StatMgr : MonoBehaviour
         if (Shared.StatMgr == null)
         {
             Shared.StatMgr = this;
-
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
     public float Max_Mp = 0;
@@ -60,8 +63,8 @@ public float Sword_Dmg;
             Exp -= Need;
             Lv += 1;
             Stat_point += 3;
+            Need = Lv * Lv * 30;
         }
-        Need = Lv * Lv * 30;
     }
     private void Update()
     {

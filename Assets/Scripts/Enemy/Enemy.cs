@@ -251,7 +251,7 @@ public class Enemy : MonoBehaviour
         Random = rand.Next(Enemy_Lv, max);
         if (Random == max - 1)
         {
-            Inventory.instance.AddItem(EnemyDrop, 1);
+            Shared.InventoryMgr.AddItem(EnemyDrop, 1);
         }
         Shared.StatMgr.Exp += Enemy_Lv * Enemy_Lv * 10;
     }

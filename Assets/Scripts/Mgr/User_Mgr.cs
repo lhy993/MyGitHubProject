@@ -9,8 +9,11 @@ public class UserMgr : MonoBehaviour
         if (Shared.UserMgr == null)
         {
             Shared.UserMgr = this;
-
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
     public int gold = 0;

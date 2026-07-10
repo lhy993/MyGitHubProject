@@ -59,7 +59,7 @@ public class Enemy_Boss : Enemy
     public override void Drop()
     {
         Random = rand.Next(1, 6);
-        Inventory.instance.AddItem(EnemyDrop, Random);
+        Shared.InventoryMgr.AddItem(EnemyDrop, Random);
         Shared.StatMgr.Exp += Enemy_Lv * Enemy_Lv * 10;
     }
     public override void Die()

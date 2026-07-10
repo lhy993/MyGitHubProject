@@ -6,26 +6,18 @@ using System.Collections.Generic;
 public class SaveData
 {
     public int level;
+    public float need;
     public float exp;
 
     public float hp;
     public float mp;
 
+    public int gold;
 
     public List<ItemData> inventory;
 
 
     public bool[] clearStage;
-
-    public int itemID;
-
-    public int amount;
-
-
-    public int upgradeLevel;
-
-
-    public bool isEquipped;
 
     public StatData stat;
 }

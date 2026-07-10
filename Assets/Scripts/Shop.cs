@@ -31,7 +31,7 @@ public class Shop : MonoBehaviour, iinteraction
         if (Shared.UserMgr.gold >= 50)
         {
             Shared.UserMgr.gold -= 50;
-            Inventory.instance.AddItem(reviveItem, 1);
+            Shared.InventoryMgr.AddItem(reviveItem, 1);
         }
     }
 

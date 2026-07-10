@@ -9,7 +9,7 @@ public class Forge : MonoBehaviour, iinteraction
     public GameObject IMAGE;
 
     public CraftRecipe GoblinSwordRecipe;
-    public CraftRecipe SkeletonSwordRecipe;
+    public CraftRecipe SkeletonSwordRecipe; 
     public TextMeshPro TIP;
     public void Interact()
     {   
@@ -31,11 +31,11 @@ public class Forge : MonoBehaviour, iinteraction
     }
     public void GoblinSwordCraft()
     {
-        Inventory.instance.Craft(GoblinSwordRecipe);
+        Shared.InventoryMgr.Craft(GoblinSwordRecipe);
     }
     public void SkeletonSwordCraft()
     {
-        Inventory.instance.Craft(SkeletonSwordRecipe);
+        Shared.InventoryMgr.Craft(SkeletonSwordRecipe);
     }
     public void TextOn()
     {

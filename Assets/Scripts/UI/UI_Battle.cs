@@ -348,7 +348,7 @@ public class UI_Battle : MonoBehaviour
         Time.timeScale = 1f;
         Revive.SetActive(false);
         HEART[0].SetActive(true);
-        Inventory.instance.RemoveItemByItem(reviveItem, 1);
+        Shared.InventoryMgr.RemoveItemByItem(reviveItem, 1);
         Shared.BattleMgr.life++;
     }
     public void ReviveOff()

@@ -8,7 +8,7 @@ public class InventoryUI : MonoBehaviour
     public ItemDetailUI detailUI;
     private void Start()
     {
-        Inventory.instance.ui = this;
+        Shared.InventoryMgr.ui = this;
         UpdateUI();
 
     }
@@ -22,7 +22,7 @@ public class InventoryUI : MonoBehaviour
         }
 
         // 새로 생성
-        foreach (var slot in Inventory.instance.slots)
+        foreach (var slot in Shared.InventoryMgr.slots)
         {
             GameObject obj = Instantiate(slotPrefab, slotParent);
             Transform icon = obj.transform.Find("Icon");

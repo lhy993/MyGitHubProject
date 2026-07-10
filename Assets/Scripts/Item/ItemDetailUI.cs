@@ -21,41 +21,24 @@ public class ItemDetailUI : MonoBehaviour
         icon.sprite = slot.itemInstance.item.icon;
         nameText.text = slot.itemInstance.item.itemName;
 
-        //스택 여부에 따라 UI 변경
         if (slot.itemInstance.item.isStackable)
         {
-            upgradeButton.SetActive(false); //버튼 숨김
+            upgradeButton.SetActive(false);
             DmgText.gameObject.SetActive(false);
         }
         else
         {
-            upgradeText.text = "강화: +" + slot.itemInstance.upgradeLevel;
-            DmgText.text = $"{slot.itemInstance.sword_dmg}dmg";
-            upgradeButton.SetActive(true); //버튼 보이기
+            upgradeButton.SetActive(true);
             DmgText.gameObject.SetActive(true);
         }
-        if (slot.itemInstance.item.itemType == ItemType.Weapon)
-        {
-            equipButton.SetActive(true);
 
-            //장착 여부 검사
-            if (EquipmentManager.instance.equippedWeapon == slot)
-            {
-                equipButtonText.text = "장착됨";
-            }
-            else
-            {
-                equipButtonText.text = "장착";
-            }
-        }
-        else
-        {
-            equipButton.SetActive(false);
-        }
+        equipButton.SetActive(slot.itemInstance.item.itemType == ItemType.Weapon);
+
+        Refresh();   //마지막에 한 번만 호출
     }
     public void OnClickEquip()
     {
-        EquipmentManager.instance.EquipWeapon(currentSlot);
+        Shared.EquipmentMgr.EquipWeapon(currentSlot);
 
         Refresh();
     }
@@ -67,18 +50,20 @@ public class ItemDetailUI : MonoBehaviour
     //강화 버튼
     public void OnClickUpgrade()
     {
-        Inventory.instance.UpgradeItem(currentSlot);
+        Shared.InventoryMgr.UpgradeItem(currentSlot);
         Refresh();
     }
 
     //판매 버튼
     public void OnClickSell()
     {
-        int price = currentSlot.itemInstance.item.price;
+        if (!currentSlot.itemInstance.isEquipped)
+        {
+            int price = currentSlot.itemInstance.item.price;
 
-        Inventory.instance.RemoveItem(currentSlot, 1);
-        Shared.UserMgr.gold += price;
-
+            Shared.InventoryMgr.RemoveItem(currentSlot, 1);
+            Shared.UserMgr.gold += price;
+        }
         if (currentSlot.amount <= 0)
         {
             Hide();
@@ -97,14 +82,8 @@ public class ItemDetailUI : MonoBehaviour
 
         DmgText.text = $"{currentSlot.itemInstance.sword_dmg} dmg";
 
-        if (EquipmentManager.instance.equippedWeapon == currentSlot)
-        {
-            equipButtonText.text = "장착됨";
-        }
-        else
-        {
-            equipButtonText.text = "장착";
-        }
+        equipButtonText.text =
+            currentSlot.itemInstance.isEquipped ? "장착됨" : "장착";
     }
 
 }

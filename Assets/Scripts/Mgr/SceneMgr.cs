@@ -11,8 +11,11 @@ public partial class SceneMgr : MonoBehaviour
         if (Shared.SceneMgr == null)
         {
             Shared.SceneMgr = this;
-
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
     // Start is called before the first frame update

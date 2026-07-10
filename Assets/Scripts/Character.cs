@@ -255,7 +255,7 @@ public partial class Character : MonoBehaviour
                 }
                 if (Shared.BattleMgr.EnemyStage > 100 && Shared.BattleMgr.life <= 0)
                 {
-                    if (Inventory.instance.HasItem(reviveItem, 1))
+                    if (Shared.InventoryMgr.HasItem(reviveItem, 1))
                     {
                         Revive.SetActive(true);
                         Time.timeScale = 0f;

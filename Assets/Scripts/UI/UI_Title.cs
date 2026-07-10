@@ -10,11 +10,8 @@ public class UiTitle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
     }
-    public void OnBtnTitle()
-    {
-        Shared.SceneMgr.ChangeScene(SCENE.Login);
-    }   
     // Update is called once per frame
     void Update()
     {

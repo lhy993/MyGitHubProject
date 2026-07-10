@@ -17,5 +17,5 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 8677cbebf2c5ad447a85dc84b0e9d042, type: 3}
   isStackable: 0
   price: 15
-  normalDmg: 15
+  normalDmg: 20
   itemType: 1
