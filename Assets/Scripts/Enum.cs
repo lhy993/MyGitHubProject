@@ -2,6 +2,7 @@ public enum SCENE
 {
     Title,
     Battle,
+    Tutorial
 }
 public enum STAGE
 {

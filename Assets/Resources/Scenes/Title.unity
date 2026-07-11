@@ -1296,6 +1296,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1634715863843241257, guid: d0334d3a62a98d944ad78dce26407d4d, type: 3}
+      propertyPath: Sword
+      value: 
+      objectReference: {fileID: 11400000, guid: 7660a184b9cb2584caac8cff44b50ac8, type: 2}
+    - target: {fileID: 1634715863843241257, guid: d0334d3a62a98d944ad78dce26407d4d, type: 3}
       propertyPath: saveMgr
       value: 
       objectReference: {fileID: 775044390}

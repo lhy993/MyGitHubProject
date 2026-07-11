@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Unity.VisualScripting;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
@@ -29,9 +30,9 @@ public class InventoryMgr : MonoBehaviour
         }
     }
 
-    public void AddItem(Item item, int amount = 1)
+    public InventorySlot AddItem(Item item, int amount = 1)
     {
-        //스택 가능일 때만 기존 찾기
+        // 스택 가능일 때만 기존 찾기
         if (item.isStackable)
         {
             foreach (var slot in slots)
@@ -43,18 +44,22 @@ public class InventoryMgr : MonoBehaviour
                     if (ui != null)
                         ui.UpdateUI();
 
-                    return;
+                    return slot;   // 기존 슬롯 반환
                 }
             }
         }
 
-        //새 인스턴스 생성
+        // 새 인스턴스 생성
         ItemInstance newItem = new ItemInstance(item);
 
-        slots.Add(new InventorySlot(newItem, amount));
+        InventorySlot newSlot = new InventorySlot(newItem, amount);
+
+        slots.Add(newSlot);
 
         if (ui != null)
             ui.UpdateUI();
+
+        return newSlot;   // 새 슬롯 반환
     }
     public void RemoveItem(InventorySlot slot, int amount = 1)
     {

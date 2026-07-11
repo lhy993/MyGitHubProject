@@ -102,9 +102,7 @@ public class SaveMgr : MonoBehaviour
     }
 
     public void Load(SaveData data)
-    {
-        Debug.Log(Shared.InventoryMgr);
-
+    {   
         Shared.StatMgr.Lv = data.level;
         Shared.StatMgr.Need = data.need;
         Shared.StatMgr.Exp = data.exp;
@@ -123,10 +121,6 @@ public class SaveMgr : MonoBehaviour
         Shared.StatMgr.Def_Stat = data.stat.defStat;
         Shared.StatMgr.Hp_Stat = data.stat.hpStat;
         Shared.StatMgr.Stat_point = data.stat.statPoint;
-
-        Debug.Log($"Load ¿Ï·á : Lv={Shared.StatMgr.Lv}, Exp={Shared.StatMgr.Exp}");
-        
-        Debug.Log("ºÒ·¯¿È");
     }
 
     private void OnApplicationPause(bool pause)

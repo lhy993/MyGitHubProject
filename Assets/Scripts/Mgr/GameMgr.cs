@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameMgr : MonoBehaviour
 {
+    public Item Sword;
     private void Awake()
     {
         if (Shared.GameMgr == null)
@@ -35,7 +37,6 @@ public class GameMgr : MonoBehaviour
     
     void CreateNewGame()
     {
-
         Shared.StatMgr.Lv = 0;
         Shared.StatMgr.Need = 0;
         Shared.StatMgr.Exp = 0;
@@ -51,7 +52,10 @@ public class GameMgr : MonoBehaviour
         Shared.StatMgr.Hp_Stat = 0;
         Shared.StatMgr.Stat_point = 0;
 
-        Shared.InventoryMgr.slots.Clear();
+        InventorySlot slot = Shared.InventoryMgr.AddItem(Sword, 1);
+
+        slot.itemInstance.isEquipped = true;
+        Shared.EquipmentMgr.EquipWeapon(slot);
         Shared.SaveMgr.Save();
 
         Debug.Log("새로운 게임");

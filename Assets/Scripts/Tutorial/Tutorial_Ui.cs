@@ -1,20 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class UiTitle : MonoBehaviour
+public class Tutorial_Ui : MonoBehaviour
 {
-    public GameObject SceneMgr;
     // Start is called before the first frame update
     void Start()
     {
-        Shared.SceneMgr.ChangeScene(SCENE.Tutorial);
+        
     }
+
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }

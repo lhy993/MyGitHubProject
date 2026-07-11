@@ -183,7 +183,7 @@ public class UI_Battle : MonoBehaviour
         }
     }
     public virtual void inventory()
-    {
+    {   
         if (Shared.BattleMgr.EnemyStage < 100)
         {
             inventory_On = !inventory_On;
