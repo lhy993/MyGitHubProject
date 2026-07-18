@@ -14,4 +14,5 @@ public static class Shared
     public static GameMgr GameMgr;
     public static InventoryMgr InventoryMgr;
     public static SaveMgr SaveMgr;
+    public static TutorialMgr TutorialMgr;
 }   

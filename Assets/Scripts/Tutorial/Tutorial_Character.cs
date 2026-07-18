@@ -37,8 +37,6 @@ public class Tutorial_Character : MonoBehaviour
 
     iinteraction currentInteractable;
 
-    public int TutorialStage;
-
     public float totalMoveTime = 0f;
     public float moveStartTime;
     private void Start()
@@ -53,7 +51,7 @@ public class Tutorial_Character : MonoBehaviour
         Shared.StatMgr.Stat();
  
 
-        TutorialStage = 1;
+        Shared.TutorialMgr.TutorialStage = 1;
     }
     void Update()
     {
@@ -126,7 +124,7 @@ public class Tutorial_Character : MonoBehaviour
     public void MoveLeftDown()
     {
             moveDir = -1;
-        if (TutorialStage == 1)
+        if (Shared.TutorialMgr.TutorialStage == 1)
         {
             moveStartTime = Time.time;
         }
@@ -134,7 +132,7 @@ public class Tutorial_Character : MonoBehaviour
     public void MoveRightDown()
     {
             moveDir = 1;
-        if (TutorialStage == 1)
+        if (Shared.TutorialMgr.TutorialStage == 1)
         {
             moveStartTime = Time.time;
         }
@@ -143,35 +141,35 @@ public class Tutorial_Character : MonoBehaviour
     {
             moveDir = 0;
             m_body2d.velocity = new Vector2(0, m_body2d.velocity.y);
-            if (TutorialStage == 1)
+            if (Shared.TutorialMgr.TutorialStage == 1)
             {
                 totalMoveTime += Time.time - moveStartTime;
                 if (totalMoveTime > 1)
                 {
-                    TutorialStage = 2;
+                    Shared.TutorialMgr.TutorialStage = 2;
                 }
             }
     }
 
     public void jumpBtn()
     {
-        if (m_grounded && TutorialStage >= 2)
+        if (m_grounded && Shared.TutorialMgr.TutorialStage >= 2)
         {
             m_animator.SetTrigger("Jump");
             m_grounded = false;
             m_animator.SetBool("Grounded", m_grounded);
             m_body2d.velocity = new Vector2(m_body2d.velocity.x, m_jumpForce);
             m_groundSensor.Disable(0.2f);
-            if (TutorialStage == 2)
+            if (Shared.TutorialMgr.TutorialStage == 2)
             {
-                TutorialStage = 3;
+                Shared.TutorialMgr.TutorialStage = 3;
             }
         }
     }
 
     public void AttackBtn()
     {
-        if (m_timeSinceAttack > 0.5f && block == false && TutorialStage >= 3)
+        if (m_timeSinceAttack > 0.5f && block == false && Shared.TutorialMgr.TutorialStage >= 3)
         {
             m_currentAttack++;
 
@@ -186,9 +184,10 @@ public class Tutorial_Character : MonoBehaviour
             //  공격 애니메이션 호출
             m_animator.SetTrigger("Attack" + m_currentAttack);
             block = false;
-            if(TutorialStage == 3)
+            if(Shared.TutorialMgr.TutorialStage == 3)
             {
-                TutorialStage = 4;
+                Shared.TutorialMgr.TutorialStage = 4;
+                Shared.TutorialMgr.dummy();
             }
 
             // 타이머 초기화
@@ -213,7 +212,7 @@ public class Tutorial_Character : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>()?.TakeDamage(Shared.StatMgr.Dmg);
+            enemy.GetComponent<Enemy_Dummy>()?.TakeDamage(Shared.StatMgr.Dmg);
         }
     }  
 }
