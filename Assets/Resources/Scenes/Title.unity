@@ -711,7 +711,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce04f2012051e34aaaf02b3de4332e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneMgr: {fileID: 0}
 --- !u!114 &1250328040 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1634715863843241257, guid: d0334d3a62a98d944ad78dce26407d4d, type: 3}
@@ -1363,7 +1362,11 @@ PrefabInstance:
     - target: {fileID: 5429314593113263739, guid: 1a1c452cab2f5b349aab52b755442a17, type: 3}
       propertyPath: DummyPrefab
       value: 
-      objectReference: {fileID: 5558309319195730334, guid: de3f5a640c498524a9db327a2c19be13, type: 3}
+      objectReference: {fileID: 2315390164619329157, guid: 13d93ff7c3a69f64f9303981ab36d3b6, type: 3}
+    - target: {fileID: 5429314593113263739, guid: 1a1c452cab2f5b349aab52b755442a17, type: 3}
+      propertyPath: PortalPrefab
+      value: 
+      objectReference: {fileID: 4975682679428462599, guid: 081fb75131144b94ea9a72a6d42a667e, type: 3}
     - target: {fileID: 5631836307009928399, guid: 1a1c452cab2f5b349aab52b755442a17, type: 3}
       propertyPath: m_Name
       value: TutorialMgr

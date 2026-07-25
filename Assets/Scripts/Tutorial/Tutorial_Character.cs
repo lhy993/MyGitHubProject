@@ -39,6 +39,9 @@ public class Tutorial_Character : MonoBehaviour
 
     public float totalMoveTime = 0f;
     public float moveStartTime;
+
+    public float totalBlockTime = 0f;
+    public float BlockStartTime;
     private void Start()
     {
         m_animator = GetComponent<Animator>();
@@ -187,7 +190,6 @@ public class Tutorial_Character : MonoBehaviour
             if(Shared.TutorialMgr.TutorialStage == 3)
             {
                 Shared.TutorialMgr.TutorialStage = 4;
-                Shared.TutorialMgr.dummy();
             }
 
             // 타이머 초기화
@@ -197,22 +199,65 @@ public class Tutorial_Character : MonoBehaviour
 
     public void Attack()
     {
-        Vector2 dir = Vector2.right * m_facingDirection;
+    }
 
-        Vector2 attackPos =
-            (Vector2)transform.position +
-            dir * 1.5f +
-            Vector2.up * 2f;
-
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(
-            attackPos,
-            attackRange,
-            enemyLayer
-        );
-
-        foreach (Collider2D enemy in hitEnemies)
+    public void BlockDown()
+    {
+        block = true;
+        m_animator.SetTrigger("Block");
+        m_animator.SetBool("IdleBlock", true);
+        if (Shared.TutorialMgr.TutorialStage == 4)
         {
-            enemy.GetComponent<Enemy_Dummy>()?.TakeDamage(Shared.StatMgr.Dmg);
+            BlockStartTime = Time.time;
         }
-    }  
+    }
+    public void BlockUp()
+    {
+        block = false;
+        m_animator.SetBool("IdleBlock", false);
+        if (Shared.TutorialMgr.TutorialStage == 4)
+        {
+            totalBlockTime += Time.time - BlockStartTime;
+            if (totalMoveTime > 0.5)
+            {
+                Shared.TutorialMgr.TutorialStage = 5;
+                Shared.TutorialMgr.Portal();
+            }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        iinteraction interactable =
+            collision.GetComponent<iinteraction>();
+
+        if (interactable != null)
+        {
+            currentInteractable = interactable;
+            INTERACTIONBTN.SetActive(true);
+            currentInteractable.Text();
+            currentInteractable.TextOn();
+            currentInteractable.Tip();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        iinteraction interactable =
+            collision.GetComponent<iinteraction>();
+
+        if (interactable != null &&
+            currentInteractable == interactable)
+        {
+            currentInteractable.TextOff();
+            currentInteractable = null;
+            INTERACTIONBTN.SetActive(false);
+        }
+    }
+    public void InteractionBtn()
+    {
+        if (currentInteractable != null)
+        {
+            currentInteractable.Interact();
+        }
+    }
 }

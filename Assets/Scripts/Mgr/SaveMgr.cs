@@ -20,6 +20,7 @@ public class SaveMgr : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        Debug.Log(path);
     }
 
 

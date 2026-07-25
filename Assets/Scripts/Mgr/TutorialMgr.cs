@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TutorialMgr : MonoBehaviour
 {
-    public GameObject DummyPrefab;
+    public GameObject PortalPrefab;
 
     public int TutorialStage;
     private void Awake()
@@ -31,8 +31,8 @@ public class TutorialMgr : MonoBehaviour
         
     }
 
-    public void dummy()
+    public void Portal()
     {
-        Instantiate(DummyPrefab, new Vector3(-3, 4, 0), Quaternion.identity);
+        Instantiate(PortalPrefab, new Vector3(-3, 5, 0), Quaternion.identity);
     }
 }

@@ -14,7 +14,12 @@ public class Portal : MonoBehaviour, iinteraction
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        if (Shared.BattleMgr.EnemyStage > 100)
+        if (Shared.TutorialMgr.TutorialStage == 5)
+        {
+            Shared.TutorialMgr.TutorialStage = 6;
+            Shared.GameMgr.CreateNewGame();
+        }
+        else if(Shared.BattleMgr.EnemyStage > 100)
         {
             Shared.BattleMgr.EnemyStage -= 100;
             Ui_Battle.Reset();

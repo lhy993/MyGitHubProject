@@ -26,16 +26,15 @@ public class GameMgr : MonoBehaviour
         if (data != null)
         {
             Shared.SaveMgr.Load(data);
+            Shared.SceneMgr.ChangeScene(SCENE.Battle);
         }
         else
         {
-            CreateNewGame();
+            Tutorial();
         }
-
-        Shared.SceneMgr.ChangeScene(SCENE.Battle);
     }
     
-    void CreateNewGame()
+    public void CreateNewGame()
     {
         Shared.StatMgr.Lv = 0;
         Shared.StatMgr.Need = 0;
@@ -58,7 +57,12 @@ public class GameMgr : MonoBehaviour
         Shared.EquipmentMgr.EquipWeapon(slot);
         Shared.SaveMgr.Save();
 
-        Debug.Log("새로운 게임");
+        Shared.SceneMgr.ChangeScene(SCENE.Battle);
+    }
+
+    public void Tutorial()
+    {
+        Shared.SceneMgr.ChangeScene(SCENE.Tutorial);
     }
 
 }

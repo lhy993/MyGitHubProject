@@ -3237,6 +3237,30 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Tutorial_Character, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 6567863467294073289, guid: 9507c4a09eb827e49884ace6d0cedee2, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 9101336953415644461}
+    - target: {fileID: 6567863467294073289, guid: 9507c4a09eb827e49884ace6d0cedee2, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 9101336953415644461}
+    - target: {fileID: 6567863467294073289, guid: 9507c4a09eb827e49884ace6d0cedee2, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BlockDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 6567863467294073289, guid: 9507c4a09eb827e49884ace6d0cedee2, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BlockUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6567863467294073289, guid: 9507c4a09eb827e49884ace6d0cedee2, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Tutorial_Character, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6567863467294073289, guid: 9507c4a09eb827e49884ace6d0cedee2, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Tutorial_Character, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7038588898591568822, guid: 9507c4a09eb827e49884ace6d0cedee2, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5041,6 +5065,8 @@ MonoBehaviour:
   INTERACTIONBTN: {fileID: 4074361755499450714}
   totalMoveTime: 0
   moveStartTime: 0
+  totalBlockTime: 0
+  BlockStartTime: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
