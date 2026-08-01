@@ -32,7 +32,14 @@ public class Portal : MonoBehaviour, iinteraction
     }
     public void Text()
     {
-        Ui_Battle.InteractionText("∆˜≈ª ¿‘¿Â");
+        if (Shared.TutorialMgr.TutorialStage == 5)
+        {
+
+        }
+        else
+        {
+            Ui_Battle.InteractionText("∆˜≈ª ¿‘¿Â");
+        }
     }
 
     public void Tip()

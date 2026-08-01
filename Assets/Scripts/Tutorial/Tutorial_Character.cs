@@ -52,7 +52,7 @@ public class Tutorial_Character : MonoBehaviour
         m_wallSensorL1 = transform.Find("WallSensor_L1").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL2 = transform.Find("WallSensor_L2").GetComponent<Sensor_HeroKnight>();
         Shared.StatMgr.Stat();
- 
+
 
         Shared.TutorialMgr.TutorialStage = 1;
     }
@@ -126,15 +126,16 @@ public class Tutorial_Character : MonoBehaviour
     }
     public void MoveLeftDown()
     {
-            moveDir = -1;
+        moveDir = -1;
         if (Shared.TutorialMgr.TutorialStage == 1)
         {
             moveStartTime = Time.time;
         }
+        
     }
     public void MoveRightDown()
     {
-            moveDir = 1;
+        moveDir = 1;
         if (Shared.TutorialMgr.TutorialStage == 1)
         {
             moveStartTime = Time.time;
@@ -142,16 +143,16 @@ public class Tutorial_Character : MonoBehaviour
     }
     public void MoveUp()
     {
-            moveDir = 0;
-            m_body2d.velocity = new Vector2(0, m_body2d.velocity.y);
-            if (Shared.TutorialMgr.TutorialStage == 1)
+        moveDir = 0;
+        m_body2d.velocity = new Vector2(0, m_body2d.velocity.y);
+        if (Shared.TutorialMgr.TutorialStage == 1)
+        {
+            totalMoveTime += Time.time - moveStartTime;
+            if (totalMoveTime > 1)
             {
-                totalMoveTime += Time.time - moveStartTime;
-                if (totalMoveTime > 1)
-                {
-                    Shared.TutorialMgr.TutorialStage = 2;
-                }
+                Shared.TutorialMgr.TutorialStage = 2;
             }
+        }
     }
 
     public void jumpBtn()
@@ -187,7 +188,7 @@ public class Tutorial_Character : MonoBehaviour
             //  공격 애니메이션 호출
             m_animator.SetTrigger("Attack" + m_currentAttack);
             block = false;
-            if(Shared.TutorialMgr.TutorialStage == 3)
+            if (Shared.TutorialMgr.TutorialStage == 3)
             {
                 Shared.TutorialMgr.TutorialStage = 4;
             }
@@ -203,12 +204,15 @@ public class Tutorial_Character : MonoBehaviour
 
     public void BlockDown()
     {
-        block = true;
-        m_animator.SetTrigger("Block");
-        m_animator.SetBool("IdleBlock", true);
-        if (Shared.TutorialMgr.TutorialStage == 4)
+        if (Shared.TutorialMgr.TutorialStage >= 4)
         {
-            BlockStartTime = Time.time;
+            block = true;
+            m_animator.SetTrigger("Block");
+            m_animator.SetBool("IdleBlock", true);
+            if (Shared.TutorialMgr.TutorialStage == 4)
+            {
+                BlockStartTime = Time.time;
+            }
         }
     }
     public void BlockUp()
@@ -250,7 +254,6 @@ public class Tutorial_Character : MonoBehaviour
         {
             currentInteractable.TextOff();
             currentInteractable = null;
-            INTERACTIONBTN.SetActive(false);
         }
     }
     public void InteractionBtn()
@@ -259,5 +262,5 @@ public class Tutorial_Character : MonoBehaviour
         {
             currentInteractable.Interact();
         }
-    }
+    }   
 }
