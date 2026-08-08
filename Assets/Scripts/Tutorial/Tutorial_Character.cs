@@ -54,7 +54,7 @@ public class Tutorial_Character : MonoBehaviour
         Shared.StatMgr.Stat();
 
 
-        Shared.TutorialMgr.TutorialStage = 1;
+        Shared.TutorialMgr.Next(1);
     }
     void Update()
     {
@@ -150,7 +150,7 @@ public class Tutorial_Character : MonoBehaviour
             totalMoveTime += Time.time - moveStartTime;
             if (totalMoveTime > 1)
             {
-                Shared.TutorialMgr.TutorialStage = 2;
+                Shared.TutorialMgr.Next(2);
             }
         }
     }
@@ -166,7 +166,7 @@ public class Tutorial_Character : MonoBehaviour
             m_groundSensor.Disable(0.2f);
             if (Shared.TutorialMgr.TutorialStage == 2)
             {
-                Shared.TutorialMgr.TutorialStage = 3;
+                Shared.TutorialMgr.Next(3);
             }
         }
     }
@@ -190,7 +190,7 @@ public class Tutorial_Character : MonoBehaviour
             block = false;
             if (Shared.TutorialMgr.TutorialStage == 3)
             {
-                Shared.TutorialMgr.TutorialStage = 4;
+                Shared.TutorialMgr.Next(4);
             }
 
             // 타이머 초기화
@@ -224,7 +224,7 @@ public class Tutorial_Character : MonoBehaviour
             totalBlockTime += Time.time - BlockStartTime;
             if (totalMoveTime > 0.5)
             {
-                Shared.TutorialMgr.TutorialStage = 5;
+                Shared.TutorialMgr.Next(5);
                 Shared.TutorialMgr.Portal();
             }
         }
