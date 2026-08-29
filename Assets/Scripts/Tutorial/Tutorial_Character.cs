@@ -127,7 +127,7 @@ public class Tutorial_Character : MonoBehaviour
     public void MoveLeftDown()
     {
         moveDir = -1;
-        if (Shared.TutorialMgr.TutorialStage == 1)
+        if (Shared.BattleMgr.TutorialStage == 1)
         {
             moveStartTime = Time.time;
         }
@@ -136,7 +136,7 @@ public class Tutorial_Character : MonoBehaviour
     public void MoveRightDown()
     {
         moveDir = 1;
-        if (Shared.TutorialMgr.TutorialStage == 1)
+        if (Shared.BattleMgr.TutorialStage == 1)
         {
             moveStartTime = Time.time;
         }
@@ -145,7 +145,7 @@ public class Tutorial_Character : MonoBehaviour
     {
         moveDir = 0;
         m_body2d.velocity = new Vector2(0, m_body2d.velocity.y);
-        if (Shared.TutorialMgr.TutorialStage == 1)
+        if (Shared.BattleMgr.TutorialStage == 1)
         {
             totalMoveTime += Time.time - moveStartTime;
             if (totalMoveTime > 1)
@@ -157,14 +157,14 @@ public class Tutorial_Character : MonoBehaviour
 
     public void jumpBtn()
     {
-        if (m_grounded && Shared.TutorialMgr.TutorialStage >= 2)
+        if (m_grounded && Shared.BattleMgr.TutorialStage >= 2)
         {
             m_animator.SetTrigger("Jump");
             m_grounded = false;
             m_animator.SetBool("Grounded", m_grounded);
             m_body2d.velocity = new Vector2(m_body2d.velocity.x, m_jumpForce);
             m_groundSensor.Disable(0.2f);
-            if (Shared.TutorialMgr.TutorialStage == 2)
+            if (Shared.BattleMgr.TutorialStage == 2)
             {
                 Shared.TutorialMgr.Next(3);
             }
@@ -173,7 +173,7 @@ public class Tutorial_Character : MonoBehaviour
 
     public void AttackBtn()
     {
-        if (m_timeSinceAttack > 0.5f && block == false && Shared.TutorialMgr.TutorialStage >= 3)
+        if (m_timeSinceAttack > 0.5f && block == false && Shared.BattleMgr.TutorialStage >= 3)
         {
             m_currentAttack++;
 
@@ -188,7 +188,7 @@ public class Tutorial_Character : MonoBehaviour
             //  공격 애니메이션 호출
             m_animator.SetTrigger("Attack" + m_currentAttack);
             block = false;
-            if (Shared.TutorialMgr.TutorialStage == 3)
+            if (Shared.BattleMgr.TutorialStage == 3)
             {
                 Shared.TutorialMgr.Next(4);
             }
@@ -204,12 +204,12 @@ public class Tutorial_Character : MonoBehaviour
 
     public void BlockDown()
     {
-        if (Shared.TutorialMgr.TutorialStage >= 4)
+        if (Shared.BattleMgr.TutorialStage >= 4)
         {
             block = true;
             m_animator.SetTrigger("Block");
             m_animator.SetBool("IdleBlock", true);
-            if (Shared.TutorialMgr.TutorialStage == 4)
+            if (Shared.BattleMgr.TutorialStage == 4)
             {
                 BlockStartTime = Time.time;
             }
@@ -219,7 +219,7 @@ public class Tutorial_Character : MonoBehaviour
     {
         block = false;
         m_animator.SetBool("IdleBlock", false);
-        if (Shared.TutorialMgr.TutorialStage == 4)
+        if (Shared.BattleMgr.TutorialStage == 4)
         {
             totalBlockTime += Time.time - BlockStartTime;
             if (totalMoveTime > 0.5)

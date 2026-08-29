@@ -21,9 +21,9 @@ public class Enemy_Dummy : MonoBehaviour
         Shared.BattleMgr.ComboDmg += damage;
         Shared.BattleMgr.ComboHit += 1;
         Shared.BattleMgr.ComboTime = 5;
-        if (Shared.TutorialMgr.TutorialStage == 4)
+        if (Shared.BattleMgr.TutorialStage == 4)
         {
-            Shared.TutorialMgr.TutorialStage = 5;
+            Shared.BattleMgr.TutorialStage = 5;
         }
     }
 

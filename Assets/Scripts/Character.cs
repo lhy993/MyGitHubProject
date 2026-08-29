@@ -10,7 +10,7 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public partial class Character : MonoBehaviour
-{
+{//https://pixabay.com/sound-effects/search/sword/ 사운드 찾기 사이트
     [SerializeField] float m_speed = 4.0f;
     [SerializeField] float m_jumpForce = 7.5f;
     [SerializeField] bool m_noBlood = false;
@@ -43,6 +43,8 @@ public partial class Character : MonoBehaviour
     public GameObject INTERACTIONBTN;
 
     iinteraction currentInteractable;
+
+    public UI_Battle Ui_Battle;
 
     // 시작 시 초기화
     void Start()
@@ -262,7 +264,9 @@ public partial class Character : MonoBehaviour
                     }
                     else
                     {
-                        Shared.SceneMgr.ChangeScene(SCENE.Battle);
+                        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                        Shared.BattleMgr.EnemyStage -= 100;
+                        Ui_Battle.Reset();
                     }
                 }
                 Death = true;

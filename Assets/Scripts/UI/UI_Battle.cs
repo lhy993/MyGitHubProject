@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
-public class UI_Battle : MonoBehaviour
+public class    UI_Battle : MonoBehaviour
 {
 
     public Text HP_STAT;
@@ -74,6 +74,7 @@ public class UI_Battle : MonoBehaviour
     public Text INTERACTIONTEXT;
     public GameObject FORGE;
     public GameObject Shop;
+    public GameObject portal;
 
     public STAGE Stage;
     void Start()
@@ -102,6 +103,7 @@ public class UI_Battle : MonoBehaviour
         stat_on.SetActive(!BossStage);
         GoldUi.SetActive(!BossStage);
         Hurdle.SetActive(!BossStage);
+        portal.SetActive(!BossStage);
         FORGE.SetActive(false);
         Shop.SetActive(false);
 
@@ -355,7 +357,9 @@ public class UI_Battle : MonoBehaviour
     {
         Time.timeScale = 1f;
         Revive.SetActive(false);
-        Shared.SceneMgr.ChangeScene(SCENE.Battle);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        Shared.BattleMgr.EnemyStage -= 100;
+        Reset();
     }
     public void InteractionText(string e)
     {

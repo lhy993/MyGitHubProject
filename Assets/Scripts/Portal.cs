@@ -14,9 +14,9 @@ public class Portal : MonoBehaviour, iinteraction
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        if (Shared.TutorialMgr.TutorialStage == 5)
+        if (Shared.BattleMgr.TutorialStage == 5)
         {
-            Shared.TutorialMgr.TutorialStage = 6;
+            Shared.BattleMgr.TutorialStage = 6;
             Shared.GameMgr.CreateNewGame();
         }
         else if(Shared.BattleMgr.EnemyStage > 100)
@@ -32,7 +32,7 @@ public class Portal : MonoBehaviour, iinteraction
     }
     public void Text()
     {
-        if (Shared.TutorialMgr.TutorialStage == 5)
+        if (Shared.BattleMgr.TutorialStage == 5)
         {
 
         }

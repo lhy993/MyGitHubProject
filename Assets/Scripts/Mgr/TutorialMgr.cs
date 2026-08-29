@@ -10,8 +10,6 @@ public class TutorialMgr : MonoBehaviour
     public RectTransform quadrangle;
     public RectTransform arrow;
     public Text Tip;
-
-    public int TutorialStage;
     private void Awake()
     {
         if (Shared.TutorialMgr == null)
@@ -43,9 +41,9 @@ public class TutorialMgr : MonoBehaviour
 
     public void Next(int Tutorial)
     {
-        TutorialStage = Tutorial;
+        Shared.BattleMgr.TutorialStage = Tutorial;
 
-        switch (TutorialStage)
+        switch (Shared.BattleMgr.TutorialStage)
         {
             case 1:
                 quadrangle.anchoredPosition = new Vector2(-720, -300);

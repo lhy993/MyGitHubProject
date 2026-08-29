@@ -35,7 +35,7 @@ public class BattleMgr : MonoBehaviour
     public GameObject TrunkPrefab;
 
     public int FinalStage = 3;
-
+    public int TutorialStage;
 
     public bool[] Clear = new bool[4];
     void Start()
