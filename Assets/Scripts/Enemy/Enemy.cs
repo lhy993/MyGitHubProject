@@ -47,6 +47,9 @@ public class Enemy : MonoBehaviour
     public int Random;
     public Item EnemyDrop;
     public GameObject EnemyPrefab;
+
+    public Slider HpBar;
+    public Text HpText;
     enum State
     {
         Patrol,
@@ -116,7 +119,7 @@ public class Enemy : MonoBehaviour
     }
     void Update()
     {
-        StatText();
+        HpBarText();
         EnemyUpdate();
         if (player == null) return;
 
@@ -171,9 +174,19 @@ public class Enemy : MonoBehaviour
     {
 
     }
-    public virtual void StatText()
+    public virtual void HpBarText()
     {
-        Stat.text = (Enemy_Lv + "Lv " + Mathf.FloorToInt(Enemy_Hp) + "Hp");
+        if (HpText != null && HpBar != null)
+        {
+            HpBar.maxValue = Enemy_Max_Hp;
+            HpBar.value = Enemy_Hp;
+
+            HpText.text = ("Hp " + Enemy_Hp.ToString() + " / " + Enemy_Max_Hp.ToString());
+        }
+        else
+        {
+            Debug.Log("null");
+        }
     }
     public void Attack()
     {

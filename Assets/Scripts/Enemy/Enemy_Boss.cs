@@ -18,11 +18,11 @@ public class Enemy_Boss : Enemy
     {
         BossHPText = GameObject.FindWithTag("BossHpText").GetComponent<Text>();
         BossHpSlider = GameObject.FindWithTag("BossBar").GetComponent<Slider>();
-        PORTAL = GameObject.FindWithTag("Portal");
+        PORTAL = FindFirstObjectByType<Portal>(FindObjectsInactive.Include).gameObject;
     }
     public override void EnemyStart()
     {
-        PORTAL.SetActive(false);
+    
     }
     public override void EnemyStat()
     {
@@ -39,7 +39,7 @@ public class Enemy_Boss : Enemy
         attackRange = 8f;
         Shared.BattleMgr.enemyCount = 1;
     }
-    public override void StatText()
+    public override void HpBarText()
     {   
     }
     public override void EnemyUpdate()
